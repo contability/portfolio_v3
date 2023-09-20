@@ -1,0 +1,141 @@
+{
+  "root": true,
+  "plugins": ["@nx/next"],
+  "ignorePatterns": ["*.js", "*.config.*"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nx/next/typescript", "plugin:prettier/recommended"],
+      "rules": {
+        "@nrwl/nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ],
+        "prefer-const": "off",
+        "no-prototype-builtins": "off",
+        "no-case-declarations": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off",
+        "react/no-unescaped-entities": "off",
+        "react/display-name": "off",
+        "react-hooks/rules-of-hooks": "off",
+        "react-hooks/exhaustive-deps": "off",
+        "import/no-anonymous-default-export": "off",
+        "jsx-a11y/role-supports-aria-props": "off",
+        "@next/next/no-img-element": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "no-restricted-globals": "off",
+        "@typescript-eslint/no-loss-of-precision": "off"
+      }
+    }
+  ]
+}
+
+// {
+//   "root": true,
+//   "plugins": ["@typescript-eslint", "prettier", "@tanstack/query"],
+//   "extends": [
+//     "plugin:@typescript-eslint/recommended",
+//     "plugin:prettier/recommended",
+//     "next/core-web-vitals",
+//     "plugin:storybook/recommended",
+//     "plugin:@tanstack/eslint-plugin-query/recommended"
+//   ],
+//   "parser": "@typescript-eslint/parser",
+//   "parserOptions": {
+//     "project": "tsconfig.json",
+//     "sourceType": "module"
+//   },
+//   "ignorePatterns": [".eslintrc.js"],
+//   "rules": {
+//     "prettier/prettier": "warn",
+//     "@tanstack/query/exhaustive-deps": "off",
+//     "@tanstack/query/prefer-query-object-syntax": "error",
+//     "arrow-body-style": "off",
+//     "prefer-arrow-callback": "off",
+//     "semi-spacing": ["error"],
+//     "block-spacing": ["error"],
+//     "@typescript-eslint/interface-name-prefix": "off",
+//     "@typescript-eslint/explicit-function-return-type": "off",
+//     "@typescript-eslint/explicit-module-boundary-types": "off",
+//     "@typescript-eslint/no-explicit-any": "off",
+//     "@typescript-eslint/no-inferrable-types": "off",
+//     "@typescript-eslint/no-unused-vars": "off",
+//     "@typescript-eslint/no-empty-function": "off",
+//     // "no-ternary": "error",
+//     "no-nested-ternary": "error",
+//     "no-unexpected-multiline": "error",
+//     // "@typescript-eslint/no-misused-promises": "error",
+//     // "@typescript-eslint/no-misused-new": "error",
+//     "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "warn",
+//     "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
+//     "@typescript-eslint/no-non-null-assertion": "error",
+//     "@typescript-eslint/no-require-imports": "warn",
+//     // "@typescript-eslint/no-unnecessary-condition": "error",
+//     "@typescript-eslint/no-unnecessary-type-arguments": "error",
+//     "@typescript-eslint/no-unnecessary-type-assertion": "error",
+//     "@typescript-eslint/no-unnecessary-type-constraint": "error",
+//     // "@typescript-eslint/no-unsafe-assignment": "error",
+//     "@typescript-eslint/no-var-requires": "error",
+//     "@typescript-eslint/prefer-enum-initializers": "error",
+//     "@typescript-eslint/prefer-function-type": "error",
+//     "@typescript-eslint/promise-function-async": "error",
+//     // "@typescript-eslint/restrict-plus-operands": "error",
+//     "no-dupe-class-members": "off",
+//     "@typescript-eslint/no-dupe-class-members": "error",
+//     "no-extra-semi": "off",
+//     "@typescript-eslint/no-extra-semi": "warn",
+//     "comma-spacing": "off",
+//     "@typescript-eslint/comma-spacing": "error",
+//     "no-loop-func": "off",
+//     "@typescript-eslint/no-loop-func": "warn",
+//     "no-redeclare": "off",
+//     "@typescript-eslint/no-redeclare": "error",
+//     "no-throw-literal": "off",
+//     "@typescript-eslint/no-throw-literal": "error",
+//     "no-return-await": "off",
+//     "@typescript-eslint/return-await": "error",
+//     "semi": "off",
+//     "@typescript-eslint/semi": "error",
+//     "@typescript-eslint/no-empty-interface": "off",
+//     "no-unused-vars": "off",
+//     "no-empty-function": "off",
+//     "@typescript-eslint/no-misused-promises": [
+//       "error",
+//       {
+//         "checksConditionals": true,
+//         "checksVoidReturn": false
+//       }
+//     ],
+//     "@typescript-eslint/no-misused-new": "error",
+//     "@typescript-eslint/no-floating-promises": [
+//       "error",
+//       {
+//         "ignoreVoid": true,
+//         "ignoreIIFE": false
+//       }
+//     ],
+//     "@typescript-eslint/no-mixed-enums": "error",
+//     "@typescript-eslint/no-redundant-type-constituents": "error",
+//     "@typescript-eslint/no-namespace": "off",
+//     "@typescript-eslint/ban-ts-comment": [
+//       "error",
+//       {
+//         "ts-ignore": "allow-with-description"
+//       }
+//     ],
+//     "react-hooks/exhaustive-deps": "off"
+//   }
+// }
