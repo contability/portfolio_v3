@@ -8,7 +8,10 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "use-hooks": "git config core.hooksPath hooks"
   },
   "dependencies": {
     "next": "^13.5.1",
@@ -16,12 +19,13 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@nx/eslint-plugin": "^16.8.1",
-    "@nx/next": "^16.8.1",
     "@types/node": "^20.6.3",
     "@types/react": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "eslint": "^8.49.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-no-null": "^1.0.2",
+    "eslint-plugin-storybook": "^0.6.14",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
   }
