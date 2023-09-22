@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
+
 html,
 body,
 div,
@@ -91,6 +95,7 @@ video {
   vertical-align: baseline;
   background: none;
   box-sizing: border-box;
+  font-family: 'Spoqa Han Sans Neo', 'Readex Pro', sans-serif;
 }
 
 /* HTML5 display-role reset for older browsers */

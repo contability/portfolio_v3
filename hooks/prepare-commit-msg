@@ -9,7 +9,6 @@ commit_type='(Add|Remove|Fix|Modify|Improve|Simplify|Refactor|Merge|Move)'
 
 default_pattern="^(\($commit_type\) )"
 
-# 예를 들어, "FRONTEND-123"과 같은 티켓 번호를 나타내는 형식입니다.
 ticket_pattern='FRONTEND-[0-9]+'
 target_ticket=''
 
