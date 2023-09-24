@@ -40,16 +40,17 @@ const Container = styled.main`
       gap: 5%;
 
       .main__first-label {
-        font-size: ${toRem('20px')};
+        font-size: 1.3vw;
         align-self: self-end;
-        width: ${toRem('240px')};
+        width: 15%;
+        max-height: 25vw;
         padding-bottom: ${toRem('50px')};
       }
 
       .main__title-label {
         position: relative;
         width: 80%;
-        font-size: 10vmax;
+        font-size: 10vw;
 
         *:not(.main__title-label-small p) {
           font-family: 'Abril Fatface';
@@ -61,11 +62,11 @@ const Container = styled.main`
 
           .main__title-label-small {
             width: 100%;
-            font-size: ${toRem('20px')};
+            font-size: 1.3vw;
             align-self: self-end;
             display: flex;
             flex-direction: column;
-            padding-left: ${toRem('150px')};
+            padding-left: 10%;
           }
         }
 
@@ -77,8 +78,9 @@ const Container = styled.main`
 
     .main__second-section {
       width: 100%;
-      padding-left: ${toRem('100px')};
-      padding-right: ${toRem('100px')};
+      padding-left: 8%;
+      padding-right: 8%;
+      max-height: 10vw;
       text-align: right;
       display: flex;
       align-items: center;
@@ -87,18 +89,18 @@ const Container = styled.main`
       white-space: nowrap;
 
       p:first-child {
-        font-size: ${toRem('130px')};
+        font-size: 10vw;
         font-weight: 100;
       }
 
       p:last-child {
+        font-size: 2vw;
         height: ${toRem('130px')};
-        font-size: ${toRem('26px')};
       }
     }
 
     .main__third-section {
-      font-size: 10vmax;
+      font-size: 10vw;
       display: flex;
       justify-content: space-between;
 
@@ -160,8 +162,8 @@ const RootPage = () => {
               <Img
                 src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/image_main.jpg`}
                 width={'100%'}
-                // width={837}
-                height={238}
+                height={'12vw'}
+                // height={238}
                 aspect={'16/9'}
               />
             </div>
