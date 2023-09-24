@@ -32,13 +32,12 @@ const Container = styled.main`
     display: flex;
     flex-direction: column;
     gap: ${toRem('20px')};
-    padding: ${toRem('100px')} ${toRem('100px')} ${toRem('100px')} ${toRem('100px')};
+    padding: 20px;
 
     .main__first-section {
       width: 100%;
       display: flex;
-      gap: ${toRem('100px')};
-      /* padding: ${toRem('100px')} ${toRem('100px')} 0 ${toRem('100px')}; */
+      gap: 5%;
 
       .main__first-label {
         font-size: ${toRem('20px')};
@@ -49,12 +48,11 @@ const Container = styled.main`
 
       .main__title-label {
         position: relative;
-        width: ${toRem('1200px')};
-        font-size: ${toRem('150px')};
+        width: 80%;
+        font-size: 10vmax;
 
         *:not(.main__title-label-small p) {
           font-family: 'Abril Fatface';
-          /* font-family: 'Bebas Neue'; */
         }
 
         div {
@@ -79,7 +77,6 @@ const Container = styled.main`
 
     .main__second-section {
       width: 100%;
-      /* width: ${toRem('1400px')}; */
       padding-left: ${toRem('100px')};
       padding-right: ${toRem('100px')};
       text-align: right;
@@ -101,15 +98,16 @@ const Container = styled.main`
     }
 
     .main__third-section {
-      /* padding: ${toRem('100px')} ${toRem('100px')} 0 ${toRem('100px')}; */
-      font-size: ${toRem('150px')};
+      font-size: 10vmax;
       display: flex;
       justify-content: space-between;
+
       * {
         font-family: 'Bebas Neue';
       }
 
       div {
+        width: 50%;
         filter: grayscale(1);
       }
     }
@@ -161,7 +159,8 @@ const RootPage = () => {
             <div>
               <Img
                 src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/image_main.jpg`}
-                width={837}
+                width={'100%'}
+                // width={837}
                 height={238}
                 aspect={'16/9'}
               />
