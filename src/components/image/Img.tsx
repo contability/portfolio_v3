@@ -1,13 +1,10 @@
-
 import type { MouseEventHandler } from 'react';
 import React from 'react';
 
 import Image from 'next/image';
 import { styled } from 'styled-components';
-
-import { filterPalatte } from '@/styles/theme';
-
 import type { StaticImageData } from 'next/image';
+import { filterPalatte } from '@styles/theme';
 
 interface IImg {
   /** 대체 정보 */

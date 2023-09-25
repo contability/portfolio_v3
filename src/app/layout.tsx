@@ -1,9 +1,10 @@
 // 'use client';
 
-import { palette } from '@/styles/theme';
 import NextTopLoader from 'nextjs-toploader';
 import Providers from '../../lib/providers';
 import './global.css';
+import { palette } from '@styles/theme';
+import { ThemeProvider } from 'next-themes';
 
 export const metadata = {
   title: "FURIUM's portfolio",
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
+        {/* <ThemeProvider defaultTheme="dark" attribute="class"> */}
         <NextTopLoader
           color={palette.LINE}
           initialPosition={0.08}
@@ -34,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           shadow={`0 0 10px ${palette.LINE},0 0 5px ${palette.LINE}`}
         />
         <Providers>{children}</Providers>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   );
