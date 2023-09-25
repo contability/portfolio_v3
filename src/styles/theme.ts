@@ -5,6 +5,7 @@ export const palette = {
 
   // background-color
   BACK_DEFAULT: '#F4EFE7',
+  // BACK_DEFAULT: '#ece7e1',
 
   FONT_BLACK: '#000000',
   FONT_WHITE: '#FFFFFF',
