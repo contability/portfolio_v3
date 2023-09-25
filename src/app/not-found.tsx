@@ -1,10 +1,8 @@
 'use client';
 
+import { palette } from '@styles/theme';
 import { useRouter } from 'next/navigation';
 import { styled } from 'styled-components';
-
-import { palette } from '@/styles/theme';
-
 const NotFoundContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,7 +15,6 @@ const NotFoundContainer = styled.div`
 
   header {
     font-size: 70px;
-    /* color: ${palette.FONT_BLACK}; */
 
     @media (max-width: 834px) {
       font-size: 40px;
@@ -28,7 +25,6 @@ const NotFoundContainer = styled.div`
     margin-top: 16px;
     font-size: 16px;
     display: flex;
-    /* color: ${palette.FONT_BLACK}; */
     flex-direction: column;
     align-items: center;
   }
@@ -63,7 +59,6 @@ const NotFound = () => {
 
   return (
     <NotFoundContainer>
-      {/* <header>⚠️</header> */}
       <main>
         <p>존재하지 않는 주소를 입력하셨습니다.&nbsp;</p>
       </main>

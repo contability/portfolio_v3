@@ -4,11 +4,9 @@ import React from 'react';
 
 import Link from 'next/link';
 import { styled } from 'styled-components';
-
-import Img from '@/components/image/Img';
-import { palette } from '@/styles/theme';
-
 import { toRem } from '../styles/utils';
+import { palette } from '@styles/theme';
+import Img from '@component/image/Img';
 
 const Container = styled.main`
   background-color: ${palette.BACK_DEFAULT};
@@ -102,6 +100,7 @@ const Container = styled.main`
       justify-content: end;
       gap: ${toRem('50px')};
       white-space: nowrap;
+      padding-top: 2%;
 
       p:first-child {
         font-size: 6vw;
@@ -116,6 +115,7 @@ const Container = styled.main`
     .main__third-section {
       font-size: 8vw;
       display: flex;
+
       justify-content: space-between;
       align-items: center;
 
@@ -132,6 +132,14 @@ const Container = styled.main`
 
         img {
           border-radius: 2px;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        flex-direction: column;
+
+        div {
+          width: 100%;
         }
       }
     }

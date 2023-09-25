@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body,
 div,
@@ -97,6 +101,7 @@ video {
   background: none;
   box-sizing: border-box;
   font-family: 'Spoqa Han Sans Neo', 'Readex Pro', sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
 /* HTML5 display-role reset for older browsers */
