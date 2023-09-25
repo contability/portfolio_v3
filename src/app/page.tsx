@@ -1,38 +1,50 @@
 'use client';
 
 import React from 'react';
+
+import Link from 'next/link';
 import { styled } from 'styled-components';
+
+import Img from '@/components/image/Img';
+import { palette } from '@/styles/theme';
+
 import { toRem } from '../styles/utils';
-import { palette } from '@styles/theme';
-import Img from '@component/image/Img';
 
 const Container = styled.main`
-  background-color: ${palette['Back-Default']};
-  color: ${palette.Line};
+  background-color: ${palette.BACK_DEFAULT};
+  color: ${palette.LINE};
   width: 100vw;
   height: 100vh;
   text-transform: uppercase;
 
   .main-wrapper {
-    padding: ${toRem('20px')};
+    padding: 20px;
   }
 
   header {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    border-bottom: 2px solid ${palette.Line};
-    padding-bottom: ${toRem('10px')};
-    font-size: ${toRem('20px')};
+    border-bottom: 2px solid ${palette.LINE};
+    font-size: 1vw;
     font-weight: 500;
+
+    a {
+      margin: 0 1% 1% 1%;
+      color: ${palette.LINE};
+
+      &:hover {
+        text-decoration: line-through;
+      }
+    }
   }
 
   article {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: ${toRem('20px')};
-    padding: 20px;
+    padding: 10%;
+    padding-top: 20px;
 
     .main__first-section {
       width: 100%;
@@ -40,17 +52,22 @@ const Container = styled.main`
       gap: 5%;
 
       .main__first-label {
-        font-size: 1.3vw;
+        font-size: 0.7vw;
         align-self: self-end;
-        width: 15%;
+        width: 10%;
         max-height: 25vw;
         padding-bottom: ${toRem('50px')};
+        text-align: right;
+
+        div {
+          display: flex;
+        }
       }
 
       .main__title-label {
         position: relative;
         width: 80%;
-        font-size: 10vw;
+        font-size: 8vw;
 
         *:not(.main__title-label-small p) {
           font-family: 'Abril Fatface';
@@ -62,7 +79,7 @@ const Container = styled.main`
 
           .main__title-label-small {
             width: 100%;
-            font-size: 1.3vw;
+            font-size: 0.7vw;
             align-self: self-end;
             display: flex;
             flex-direction: column;
@@ -72,15 +89,13 @@ const Container = styled.main`
 
         > p {
           text-align: right;
+          line-height: 66%;
         }
       }
     }
 
     .main__second-section {
       width: 100%;
-      padding-left: 8%;
-      padding-right: 8%;
-      max-height: 10vw;
       text-align: right;
       display: flex;
       align-items: center;
@@ -89,20 +104,20 @@ const Container = styled.main`
       white-space: nowrap;
 
       p:first-child {
-        font-size: 10vw;
+        font-size: 6vw;
         font-weight: 100;
       }
 
       p:last-child {
-        font-size: 2vw;
-        height: ${toRem('130px')};
+        font-size: 1vw;
       }
     }
 
     .main__third-section {
-      font-size: 10vw;
+      font-size: 8vw;
       display: flex;
       justify-content: space-between;
+      align-items: center;
 
       * {
         font-family: 'Bebas Neue';
@@ -111,6 +126,13 @@ const Container = styled.main`
       div {
         width: 50%;
         filter: grayscale(1);
+        box-shadow:
+          0px 1px 2px 0px rgba(0, 0, 0, 0.05),
+          0px 1px 3px 1px rgba(0, 0, 0, 0.1);
+
+        img {
+          border-radius: 2px;
+        }
       }
     }
   }
@@ -121,13 +143,20 @@ const RootPage = () => {
     <Container>
       <div className="main-wrapper">
         <header>
-          <h2>furium</h2>
-          <h2>contact me</h2>
+          <Link href="/">furium</Link>
+          <Link href="/">contact me</Link>
         </header>
         <article>
           <section className="main__first-section">
             <div className="main__first-label">
-              <p>working as a developer since 2020.04.</p>
+              <div>
+                <Img
+                  filterColor={palette.LINE}
+                  src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/image_flare.svg`}
+                  size={'1.5vw'}
+                />
+                working as a developer since 2020.04.
+              </div>
             </div>
             <div className="main__title-label">
               <div>
@@ -162,8 +191,7 @@ const RootPage = () => {
               <Img
                 src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/image_main.jpg`}
                 width={'100%'}
-                height={'12vw'}
-                // height={238}
+                height={'12vh'}
                 aspect={'16/9'}
               />
             </div>
@@ -174,6 +202,6 @@ const RootPage = () => {
   );
 };
 
-RootPage.layout = 'default';
+RootPage.layout = 'abc';
 
 export default RootPage;
