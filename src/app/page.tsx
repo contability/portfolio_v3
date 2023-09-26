@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { styled } from 'styled-components';
 import { palette } from '@styles/theme';
 import Link from 'next/link';
@@ -10,6 +10,7 @@ const Container = styled.main`
   height: 100vh;
   background-color: ${palette.BACK_DEFAULT};
   color: ${palette.LINE};
+  font-family: Montserrat, sans-serif;
 
   nav {
     z-index: 50;
@@ -75,6 +76,11 @@ const Container = styled.main`
     padding-left: 10%;
     display: flex;
 
+    @media (max-width: 890px) {
+      flex-direction: column;
+      height: fit-content;
+    }
+
     .branding__section-left {
       width: 25%;
       height: 100vh;
@@ -83,7 +89,46 @@ const Container = styled.main`
       align-items: flex-start;
       display: flex;
       /* position: fixed; */
+
+      @media (max-width: 890px) {
+        height: fit-content;
+        width: 100%;
+        padding-top: 30%;
+      }
+
+      .branding__section-header {
+        margin-bottom: 2vh;
+        padding-top: 5%;
+        overflow: hidden;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-family: Montserrat, sans-serif;
+        font-size: 17px;
+        font-weight: 600;
+
+        /* -webkit-transform: translate3d(0, 39px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+        -moz-transform: translate3d(0, 39px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+        -ms-transform: translate3d(0, 39px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+        transform: translate3d(0, 39px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+        transform-style: preserve-3d; */
+      }
+
+      .branding__section-description {
+        font-family: Montserrat, sans-serif;
+        /* transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+          skew(0deg, 0deg);
+        transform-style: preserve-3d;
+        -webkit-transform: translate3d(0, 178px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+        -moz-transform: translate3d(0, 178px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+        -ms-transform: translate3d(0, 178px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+        transform: translate3d(0, 178px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); */
+
+        &:not(:last-child) {
+          margin-bottom: 5%;
+        }
+      }
     }
+
     .branding__section-right {
       width: 65%;
       height: 90vh;
@@ -96,14 +141,23 @@ const Container = styled.main`
       grid-template-columns: 1fr 1fr;
       grid-auto-columns: 1fr;
       justify-content: center;
-      align-items: center;
-      padding-top: 5vh;
+      align-items: start;
+      margin-top: 5vh;
+      margin-left: 5vh;
       display: flex;
       position: relative;
       top: 0%;
       bottom: 0%;
       left: auto;
       right: 0%;
+      opacity: 1;
+      transition-duration: 1s;
+      transition-property: opacity;
+
+      @media (max-width: 890px) {
+        height: fit-content;
+        width: 100%;
+      }
 
       .branding__section-right-menu {
         font-family: Montserrat, sans-serif;
@@ -115,25 +169,33 @@ const Container = styled.main`
         line-height: 0.95em;
         text-decoration: none;
         transition:
-          transform 0.3s ease-in-out,
+          transform 0.6s ease-in-out,
           color 0.3s ease-in-out,
           font-size 0.3s ease-in-out;
         display: block;
         position: relative;
+        letter-spacing: -10px;
+
+        @media (max-width: 890px) {
+          font-size: 15vw;
+        }
 
         &:hover {
-          transition:
-            transform 0.3s ease-in-out,
-            color 0.3s ease-in-out,
-            font-size 0.3s ease-in-out,
-            font-style 0s ease-in-out;
           font-style: italic;
+          -webkit-transform: skewX(-7deg);
+          -moz-transform: skewX(-7deg);
+          -o-transform: skewX(-7deg);
+          transform: skewX(-7deg);
         }
       }
     }
+
+    .fade {
+      opacity: 0;
+    }
   }
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 450px) {
     padding: 0 2% 0 2%;
     nav {
       width: 100%;
@@ -189,10 +251,29 @@ const Container = styled.main`
         display: block;
       }
     }
+
+    .branding__section-right {
+      margin-left: 0 !important;
+      .branding__section-right-menu {
+        letter-spacing: -2px !important;
+      }
+    }
   }
+
+  /* @media (max-width: 750px) {
+    .branding__section-right-menu {
+      -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+      -moz-transform: translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+      -ms-transform: translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+      transform: translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+    }
+  } */
 `;
 
 const RootPage = () => {
+  useEffect(() => {
+    document.querySelector('.branding__section-right')?.classList.remove('fade');
+  }, []);
   return (
     <Container>
       <nav>
@@ -201,25 +282,22 @@ const RootPage = () => {
             <Link href="/">GIT</Link>
           </li>
           <li className="branding__nav-menu">
-            <Link href="/">GIT</Link>
-          </li>
-          <li className="branding__nav-menu">
-            <Link href="/">GIT</Link>
+            <Link href="/">KKO</Link>
           </li>
           <li className="branding__nav-line" />
         </ul>
-        <p className="branding__nav-label">©/2023</p>
+        <p className="branding__nav-label">since 2020</p>
       </nav>
       <div className="branding__section-wrapper">
         <section className="branding__section-left">
-          <p>SHINHYUNGJUNG</p>
-          <p>
-            I am a front-end developer living in Seoul <br />
-            I believe in working together to successfully complete projects <br />I enjoy constantly learning and
-            developing
+          <h3 className="branding__section-header">SHINHYUNGJUNG</h3>
+          <p className="branding__section-description">I am a front-end developer living in Seoul</p>
+          <p className="branding__section-description">
+            I believe in working together to successfully complete projects
           </p>
+          <p className="branding__section-description">I enjoy constantly learning and developing</p>
         </section>
-        <section className="branding__section-right">
+        <section className="branding__section-right fade">
           <Link href="/" className="branding__section-right-menu">
             work
           </Link>
