@@ -4,7 +4,7 @@ import NextTopLoader from 'nextjs-toploader';
 import Providers from '../../lib/providers';
 import './global.css';
 import { palette } from '@styles/theme';
-import { ThemeProvider } from 'next-themes';
+// import { ThemeProvider } from 'next-themes';
 
 export const metadata = {
   title: "FURIUM's portfolio",
