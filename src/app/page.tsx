@@ -103,7 +103,7 @@ const Container = styled.main`
         letter-spacing: 2px;
         text-transform: uppercase;
         font-family: Montserrat, sans-serif;
-        font-size: 17px;
+        font-size: 20px;
         font-weight: 600;
 
         /* -webkit-transform: translate3d(0, 39px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
@@ -137,9 +137,9 @@ const Container = styled.main`
       grid-row-gap: 16px;
       text-align: center;
       flex-direction: column;
-      grid-template-rows: auto auto;
+      /* grid-template-rows: auto auto;
       grid-template-columns: 1fr 1fr;
-      grid-auto-columns: 1fr;
+      grid-auto-columns: 1fr; */
       justify-content: center;
       align-items: start;
       margin-top: 5vh;
@@ -279,10 +279,14 @@ const RootPage = () => {
       <nav>
         <ul>
           <li className="branding__nav-menu">
-            <Link href="/">GIT</Link>
+            <Link href="https://github.com/contability" target="_blank">
+              GIT
+            </Link>
           </li>
           <li className="branding__nav-menu">
-            <Link href="/">KKO</Link>
+            <Link href="https://open.kakao.com/o/swjepgJf" target="_blank">
+              KKO
+            </Link>
           </li>
           <li className="branding__nav-line" />
         </ul>
