@@ -1,210 +1,316 @@
 'use client';
 
-import React from 'react';
-
-import Link from 'next/link';
+import React, { useEffect } from 'react';
 import { styled } from 'styled-components';
-import { toRem } from '../styles/utils';
 import { palette } from '@styles/theme';
-import Img from '@component/image/Img';
+import Link from 'next/link';
 
 const Container = styled.main`
-  background-color: ${palette.BACK_DEFAULT};
-  color: ${palette.LINE};
   width: 100vw;
   height: 100vh;
-  text-transform: uppercase;
+  background-color: ${palette.BACK_DEFAULT};
+  color: ${palette.LINE};
+  font-family: Montserrat, sans-serif;
 
-  .main-wrapper {
-    padding: 20px;
-  }
-
-  header {
-    width: 100%;
-    display: flex;
+  nav {
+    z-index: 50;
+    width: 6%;
+    height: 100vh;
+    flex-direction: column;
     justify-content: space-between;
-    border-bottom: 2px solid ${palette.LINE};
-    font-size: 1vw;
-    font-weight: 500;
+    align-items: center;
+    padding-top: 5%;
+    padding-bottom: 30px;
+    display: flex;
+    position: fixed;
 
-    a {
-      margin: 0 1% 1% 1%;
-      color: ${palette.LINE};
+    .branding__nav-menu {
+      flex: 0 auto;
+      margin-bottom: 40px;
+      transform: rotate(-90deg);
+      text-align: center;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-family: Montserrat, sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      transition: opacity 0.3s;
+      display: block;
 
       &:hover {
         text-decoration: line-through;
       }
     }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      /* gap: 10px; */
+      align-items: center;
+
+      .branding__nav-line {
+        width: 1px;
+        height: 100px;
+        background-color: ${palette.LINE};
+        margin-top: 10px;
+        margin-bottom: 80px;
+      }
+    }
+
+    .branding__nav-label {
+      flex: 0 auto;
+      margin-bottom: 40px;
+      transform: rotate(-90deg);
+      text-align: center;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-family: Montserrat, sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      transition: opacity 0.3s;
+      display: block;
+    }
   }
 
-  article {
-    width: 100%;
+  .branding__section-wrapper {
+    padding-left: 10%;
     display: flex;
-    flex-direction: column;
-    padding: 10%;
-    padding-top: 20px;
 
-    .main__first-section {
-      width: 100%;
+    @media (max-width: 890px) {
+      flex-direction: column;
+      height: fit-content;
+    }
+
+    .branding__section-left {
+      width: 25%;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
       display: flex;
-      gap: 5%;
+      /* position: fixed; */
 
-      .main__first-label {
-        font-size: 0.7vw;
-        align-self: self-end;
-        width: 10%;
-        max-height: 25vw;
-        padding-bottom: ${toRem('50px')};
-        text-align: right;
-
-        div {
-          display: flex;
-        }
+      @media (max-width: 890px) {
+        height: fit-content;
+        width: 100%;
+        padding-top: 30%;
       }
 
-      .main__title-label {
-        position: relative;
-        width: 80%;
-        font-size: 8vw;
+      .branding__section-header {
+        margin-bottom: 2vh;
+        padding-top: 5%;
+        overflow: hidden;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-family: Montserrat, sans-serif;
+        font-size: 17px;
+        font-weight: 600;
 
-        *:not(.main__title-label-small p) {
-          font-family: 'Abril Fatface';
+        /* -webkit-transform: translate3d(0, 39px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+        -moz-transform: translate3d(0, 39px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+        -ms-transform: translate3d(0, 39px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+        transform: translate3d(0, 39px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+        transform-style: preserve-3d; */
+      }
+
+      .branding__section-description {
+        font-family: Montserrat, sans-serif;
+        /* transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+          skew(0deg, 0deg);
+        transform-style: preserve-3d;
+        -webkit-transform: translate3d(0, 178px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+        -moz-transform: translate3d(0, 178px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+        -ms-transform: translate3d(0, 178px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+        transform: translate3d(0, 178px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); */
+
+        &:not(:last-child) {
+          margin-bottom: 5%;
+        }
+      }
+    }
+
+    .branding__section-right {
+      width: 65%;
+      height: 90vh;
+      float: right;
+      grid-column-gap: 16px;
+      grid-row-gap: 16px;
+      text-align: center;
+      flex-direction: column;
+      grid-template-rows: auto auto;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-columns: 1fr;
+      justify-content: center;
+      align-items: start;
+      margin-top: 5vh;
+      margin-left: 5vh;
+      display: flex;
+      position: relative;
+      top: 0%;
+      bottom: 0%;
+      left: auto;
+      right: 0%;
+      opacity: 1;
+      transition-duration: 1s;
+      transition-property: opacity;
+
+      @media (max-width: 890px) {
+        height: fit-content;
+        width: 100%;
+      }
+
+      .branding__section-right-menu {
+        font-family: Montserrat, sans-serif;
+        z-index: 100;
+        text-align: left;
+        text-transform: uppercase;
+        font-size: 11vw;
+        font-weight: 300;
+        line-height: 0.95em;
+        text-decoration: none;
+        transition:
+          transform 0.6s ease-in-out,
+          color 0.3s ease-in-out,
+          font-size 0.3s ease-in-out;
+        display: block;
+        position: relative;
+        letter-spacing: -10px;
+
+        @media (max-width: 890px) {
+          font-size: 15vw;
         }
 
-        div {
-          display: flex;
-          justify-content: space-between;
+        &:hover {
+          font-style: italic;
+          -webkit-transform: skewX(-7deg);
+          -moz-transform: skewX(-7deg);
+          -o-transform: skewX(-7deg);
+          transform: skewX(-7deg);
+        }
+      }
+    }
 
-          .main__title-label-small {
-            width: 100%;
-            font-size: 0.7vw;
-            align-self: self-end;
-            display: flex;
-            flex-direction: column;
-            padding-left: 10%;
+    .fade {
+      opacity: 0;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    padding: 0 2% 0 2%;
+    nav {
+      width: 100%;
+      height: auto;
+      flex-direction: row;
+      padding-top: 2%;
+      padding-bottom: 0;
+      padding-left: 0;
+      position: static;
+
+      ul {
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+
+        .branding__nav-menu {
+          flex: 0 auto;
+          margin: 0;
+          transform: rotate(0deg);
+          text-align: center;
+          letter-spacing: 5px;
+          text-transform: uppercase;
+          font-family: Montserrat, sans-serif;
+          font-size: 10px;
+          font-weight: 500;
+          transition: opacity 0.3s;
+          display: block;
+
+          &:hover {
+            text-decoration: line-through;
           }
         }
 
-        > p {
-          text-align: right;
-          line-height: 66%;
+        .branding__nav-line {
+          width: 100px;
+          height: 1px;
+          background-color: ${palette.LINE};
+          margin: 0;
         }
+      }
+
+      .branding__nav-label {
+        flex: 0 auto;
+        margin: 0;
+        transform: rotate(0deg);
+        text-align: center;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font-family: Montserrat, sans-serif;
+        font-size: 10px;
+        font-weight: 500;
+        transition: opacity 0.3s;
+        display: block;
       }
     }
 
-    .main__second-section {
-      width: 100%;
-      text-align: right;
-      display: flex;
-      align-items: center;
-      justify-content: end;
-      gap: ${toRem('50px')};
-      white-space: nowrap;
-      padding-top: 2%;
-
-      p:first-child {
-        font-size: 6vw;
-        font-weight: 100;
-      }
-
-      p:last-child {
-        font-size: 1vw;
-      }
-    }
-
-    .main__third-section {
-      font-size: 8vw;
-      display: flex;
-
-      justify-content: space-between;
-      align-items: center;
-
-      * {
-        font-family: 'Bebas Neue';
-      }
-
-      div {
-        width: 50%;
-        filter: grayscale(1);
-        box-shadow:
-          0px 1px 2px 0px rgba(0, 0, 0, 0.05),
-          0px 1px 3px 1px rgba(0, 0, 0, 0.1);
-
-        img {
-          border-radius: 2px;
-        }
-      }
-
-      @media (max-width: 1024px) {
-        flex-direction: column;
-
-        div {
-          width: 100%;
-        }
+    .branding__section-right {
+      margin-left: 0 !important;
+      .branding__section-right-menu {
+        letter-spacing: -2px !important;
       }
     }
   }
+
+  /* @media (max-width: 750px) {
+    .branding__section-right-menu {
+      -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+      -moz-transform: translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+      -ms-transform: translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+      transform: translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+    }
+  } */
 `;
 
 const RootPage = () => {
+  useEffect(() => {
+    document.querySelector('.branding__section-right')?.classList.remove('fade');
+  }, []);
   return (
     <Container>
-      <div className="main-wrapper">
-        <header>
-          <Link href="/">furium</Link>
-          <Link href="/">contact me</Link>
-        </header>
-        <article>
-          <section className="main__first-section">
-            <div className="main__first-label">
-              <div>
-                <Img
-                  filterColor={palette.LINE}
-                  src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/image_flare.svg`}
-                  size={'1.5vw'}
-                />
-                working as a developer since 2020.04.
-              </div>
-            </div>
-            <div className="main__title-label">
-              <div>
-                <p>creative</p>
-                <div className="main__title-label-small">
-                  <p>front-end</p>
-                  <p>ui/ux</p>
-                  <p>publishing</p>
-                  <p>cooperation</p>
-                </div>
-              </div>
-              <p>developer</p>
-            </div>
-          </section>
-          <section className="main__second-section">
-            <p>/</p>
-            {/* <p>
-              저는 서울에 거주하는 프론트엔드 개발자입니다 <br />
-              프로젝트를 성공적으로 완료하기 위해 <br />
-              힘을 합치는 것을 중요하게 여기며 <br />
-              끊임없이 학습하고 발전하는 것을 즐깁니다 <br />
-            </p> */}
-            <p>
-              I am a front-end developer living in Seoul <br />
-              I believe in working together to successfully complete projects <br />I enjoy constantly learning and
-              developing
-            </p>
-          </section>
-          <section className="main__third-section">
-            <p>COOPERATION</p>
-            <div>
-              <Img
-                src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/image_main.jpg`}
-                width={'100%'}
-                height={'12vh'}
-                aspect={'16/9'}
-              />
-            </div>
-          </section>
-        </article>
+      <nav>
+        <ul>
+          <li className="branding__nav-menu">
+            <Link href="/">GIT</Link>
+          </li>
+          <li className="branding__nav-menu">
+            <Link href="/">KKO</Link>
+          </li>
+          <li className="branding__nav-line" />
+        </ul>
+        <p className="branding__nav-label">since 2020</p>
+      </nav>
+      <div className="branding__section-wrapper">
+        <section className="branding__section-left">
+          <h3 className="branding__section-header">SHINHYUNGJUNG</h3>
+          <p className="branding__section-description">I am a front-end developer living in Seoul</p>
+          <p className="branding__section-description">
+            I believe in working together to successfully complete projects
+          </p>
+          <p className="branding__section-description">I enjoy constantly learning and developing</p>
+        </section>
+        <section className="branding__section-right fade">
+          <Link href="/" className="branding__section-right-menu">
+            work
+          </Link>
+          <Link href="/" className="branding__section-right-menu">
+            about
+          </Link>
+          <Link href="/" className="branding__section-right-menu">
+            shop
+          </Link>
+          <Link href="/" className="branding__section-right-menu">
+            contact
+          </Link>
+        </section>
       </div>
     </Container>
   );
