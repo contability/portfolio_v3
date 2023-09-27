@@ -5,10 +5,11 @@ import { useEffect } from 'react';
 import { styled } from 'styled-components';
 
 interface SectionNavProps {
-  items: {
+  items: Array<{
     label: string;
     href: string;
-  }[];
+    itemDesc?: string;
+  }>;
 }
 
 const SectionNavContainer = styled.section`
@@ -72,6 +73,16 @@ const SectionNavContainer = styled.section`
     opacity: 0;
   }
 
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+  }
+
+  p {
+    text-align: left;
+  }
+
   @media screen and (max-width: 600px) {
     padding: 0 2% 0 2%;
 
@@ -100,11 +111,16 @@ const SectionNav = ({ items }: SectionNavProps) => {
 
   return (
     <SectionNavContainer className="section-nav fade">
-      {items.map((item, itemIndex) => (
-        <Link key={`section-navigation__${itemIndex}`} href={item.href} className="section-nav__menu">
-          {item.label}
-        </Link>
-      ))}
+      <ul>
+        {items.map((item, itemIndex) => (
+          <li key={`section-navigation__${itemIndex}`}>
+            <Link href={item.href} className="section-nav__menu">
+              {item.label}
+            </Link>
+            <p>{item.itemDesc && `- ${item.itemDesc}`}</p>
+          </li>
+        ))}
+      </ul>
     </SectionNavContainer>
   );
 };
