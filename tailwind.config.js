@@ -176,6 +176,9 @@ module.exports = {
           },
         ],
       },
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'],
+      },
       borderRadius: {
         'extra-small': '4px',
         small: '8px',
@@ -349,7 +352,7 @@ module.exports = {
     },
     screens: {
       xl: { max: '1440px' },
-      lg: { max: '1024px' },
+      maxLg: { max: '1024px' },
       md: { max: '750px' },
       sm: { max: '380px' },
     },
