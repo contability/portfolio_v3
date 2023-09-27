@@ -40,4 +40,10 @@ gitGraph
     merge dev
     commit id: "dev server test done"
     commit id: "publish setting"
+    checkout prod
+    branch hotfix
+    commit id: "hotfix issue commit"
+    checkout prod
+    merge hotfix
+    commit id: "deploy"
 ```

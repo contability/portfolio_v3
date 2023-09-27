@@ -5,7 +5,7 @@ git_dir=$(git rev-parse --git-dir)
 
 message=$(cat "$message_file")
 current_branch=$(git rev-parse --abbrev-ref HEAD)
-commit_type='(Add|Remove|Fix|Modify|Improve|Simplify|Refactor|Merge|Move)'
+commit_type='(add|remove|fix|modify|improve|simplify|refactor|merge|move)'
 
 default_pattern="^(\($commit_type\) )"
 
