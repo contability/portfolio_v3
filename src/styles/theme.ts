@@ -1,13 +1,15 @@
 export const palette = {
   // Line
   LINE: '#BB5133',
-  LINE_BTN: '#D9D9D9',
-
   // background-color
   BACK_DEFAULT: '#F4EFE7',
+};
 
-  FONT_BLACK: '#000000',
-  FONT_WHITE: '#FFFFFF',
+export const monoPalette = {
+  // Line
+  LINE: '#FFFFFF',
+  // background-color
+  BACK_DEFAULT: '#000000',
 };
 
 export const filterPalatte: Record<string, string> = {

@@ -5,7 +5,11 @@ import Link from 'next/link';
 import React from 'react';
 import { styled } from 'styled-components';
 
-const NavigationContainer = styled.nav`
+interface NavigationHomeProps {
+  colorPalette?: typeof palette;
+}
+
+const NavigationContainer = styled.nav<{ $colorPalette: typeof palette }>`
   z-index: 50;
   width: 6%;
   height: 100vh;
@@ -16,6 +20,8 @@ const NavigationContainer = styled.nav`
   padding-bottom: 30px;
   display: flex;
   position: fixed;
+  color: ${({ $colorPalette }) => $colorPalette.LINE};
+  background-color: ${({ $colorPalette }) => $colorPalette.BACK_DEFAULT};
 
   .branding__nav-menu {
     flex: 0 auto;
@@ -44,7 +50,7 @@ const NavigationContainer = styled.nav`
     .branding__nav-line {
       width: 1px;
       height: 100px;
-      background-color: ${palette.LINE};
+      background-color: ${({ $colorPalette }) => $colorPalette.LINE};
       margin-top: 10px;
       margin-bottom: 80px;
     }
@@ -68,10 +74,9 @@ const NavigationContainer = styled.nav`
     width: 100%;
     height: auto;
     flex-direction: row;
-    padding-top: 2%;
-    padding-bottom: 0;
-    padding-left: 0;
+    padding: 2% 5% 0 2%;
     position: static;
+    /* background-color: ${({ $colorPalette }) => $colorPalette.BACK_DEFAULT}; */
 
     ul {
       flex-direction: row;
@@ -99,7 +104,7 @@ const NavigationContainer = styled.nav`
       .branding__nav-line {
         width: 100px;
         height: 1px;
-        background-color: ${palette.LINE};
+        background-color: ${({ $colorPalette }) => $colorPalette.LINE};
         margin: 0;
       }
     }
@@ -120,9 +125,9 @@ const NavigationContainer = styled.nav`
   }
 `;
 
-const NavigationDefault = () => {
+const NavigationHome = ({ colorPalette = palette }: NavigationHomeProps) => {
   return (
-    <NavigationContainer>
+    <NavigationContainer $colorPalette={colorPalette}>
       <ul>
         <li className="branding__nav-menu">
           <Link href="/">HOME</Link>
@@ -134,4 +139,4 @@ const NavigationDefault = () => {
   );
 };
 
-export default React.memo(NavigationDefault);
+export default React.memo(NavigationHome);

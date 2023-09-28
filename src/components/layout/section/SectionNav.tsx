@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 
 import Link from 'next/link';
 import { useEffect } from 'react';
@@ -55,6 +55,10 @@ const SectionNavContainer = styled.section`
     display: block;
     position: relative;
     letter-spacing: -10px;
+    font-style: italic;
+    font-weight: 400;
+    text-decoration: none;
+    transform: translate(5px);
 
     @media (max-width: 1024px) {
       font-size: 15vw;
@@ -117,7 +121,7 @@ const SectionNav = ({ items }: SectionNavProps) => {
             <Link href={item.href} className="section-nav__menu">
               {item.label}
             </Link>
-            <p>{item.itemDesc && `- ${item.itemDesc}`}</p>
+            <p>{item.itemDesc && `${item.itemDesc} -`}</p>
           </li>
         ))}
       </ul>
