@@ -1,10 +1,11 @@
 export const palette = {
-  // Line
   LINE: '#BB5133',
+  LINE_WHITE: '#FFFFFF',
   LINE_BTN: '#D9D9D9',
 
   // background-color
   BACK_DEFAULT: '#F4EFE7',
+  BACK_BLACK: '#000000',
   // BACK_DEFAULT: '#ece7e1',
 
   FONT_BLACK: '#000000',
