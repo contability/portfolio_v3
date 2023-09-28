@@ -1,14 +1,14 @@
 'use client';
 
-import { palette, monoPalette } from '@styles/theme';
+import { palette } from '@styles/theme';
 import styled from 'styled-components';
 
 const DetailWorkPageContainer = styled.article`
   height: 100vh;
   width: 100vw;
   padding-left: 6%;
-  background-color: ${monoPalette.BACK_DEFAULT};
-  color: ${monoPalette.LINE};
+  background-color: ${palette.BACK_BLACK};
+  color: ${palette.LINE_WHITE};
 
   .work-detail__section-wrapper {
     background-color: ${palette.BACK_DEFAULT};

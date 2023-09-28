@@ -2,14 +2,14 @@
 
 import SectionDesc from '@component/layout/section/SectionDesc';
 import SectionNav from '@component/layout/section/SectionNav';
-import { monoPalette } from '@styles/theme';
+import { palette } from '@styles/theme';
 import styled from 'styled-components';
 
 const WorkPageContainer = styled.article`
   height: 100vh;
   width: 100vw;
-  background-color: ${monoPalette.BACK_DEFAULT};
-  color: ${monoPalette.LINE};
+  background-color: ${palette.BACK_BLACK};
+  color: ${palette.LINE_WHITE};
 
   .work__section-wrapper {
     padding-left: 10%;
