@@ -20,8 +20,8 @@ const NavigationContainer = styled.nav<{ $colorPalette: typeof palette }>`
   padding-bottom: 30px;
   display: flex;
   position: fixed;
-  color: ${({ $colorPalette }) => $colorPalette.LINE};
-  background-color: ${({ $colorPalette }) => $colorPalette.BACK_DEFAULT};
+  color: ${({ $colorPalette }) => $colorPalette.LINE_WHITE};
+  background-color: ${({ $colorPalette }) => $colorPalette.BACK_BLACK};
 
   .branding__nav-menu {
     flex: 0 auto;
@@ -50,7 +50,7 @@ const NavigationContainer = styled.nav<{ $colorPalette: typeof palette }>`
     .branding__nav-line {
       width: 1px;
       height: 100px;
-      background-color: ${({ $colorPalette }) => $colorPalette.LINE};
+      background-color: ${({ $colorPalette }) => $colorPalette.LINE_WHITE};
       margin-top: 10px;
       margin-bottom: 80px;
     }
@@ -76,7 +76,6 @@ const NavigationContainer = styled.nav<{ $colorPalette: typeof palette }>`
     flex-direction: row;
     padding: 2% 5% 0 2%;
     position: static;
-    /* background-color: ${({ $colorPalette }) => $colorPalette.BACK_DEFAULT}; */
 
     ul {
       flex-direction: row;
@@ -104,7 +103,7 @@ const NavigationContainer = styled.nav<{ $colorPalette: typeof palette }>`
       .branding__nav-line {
         width: 100px;
         height: 1px;
-        background-color: ${({ $colorPalette }) => $colorPalette.LINE};
+        /* background-color: ${({ $colorPalette }) => $colorPalette.LINE}; */
         margin: 0;
       }
     }
