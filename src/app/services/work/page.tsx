@@ -37,8 +37,9 @@ const WorkPage = () => {
         <SectionDesc
           descriptionHeader="WORK"
           descriptions={[
-            'This is a showcase of my best work in a variety of fields including Graphic and Web Design, No-Code Development, Product Design and Product Management.',
-            'The world of digital design and development is constantly evolving and so has my role over the last 15 years. I’m still learning and gaining new skills every day.',
+            'This is a list of projects that represent my development career.',
+            'The world of development is evolving even at this moment, and my role has been no different over the past three years.',
+            'I am still learning and acquiring new technologies even now.',
           ]}
         />
         <SectionNav
