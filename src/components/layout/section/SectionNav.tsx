@@ -3,14 +3,7 @@
 import Link from 'next/link';
 import { useEffect } from 'react';
 import { styled } from 'styled-components';
-
-interface SectionNavProps {
-  items: Array<{
-    label: string;
-    href: string;
-    itemDesc?: string;
-  }>;
-}
+import { SectionNavProps } from '../../../types/work';
 
 const SectionNavContainer = styled.section`
   width: 65%;

@@ -4,6 +4,8 @@ import SectionDesc from '@component/layout/section/SectionDesc';
 import SectionNav from '@component/layout/section/SectionNav';
 import { palette } from '@styles/theme';
 import styled from 'styled-components';
+import { projects } from '../../../public/projects';
+import { SectionNavProps } from '../../../types/work';
 
 const WorkPageContainer = styled.article`
   height: 100vh;
@@ -31,6 +33,29 @@ const WorkPageContainer = styled.article`
 `;
 
 const WorkPage = () => {
+  // let projectItems = Object.keys(projects).map(item => {
+  //   if (projectItems)
+  //     return [...projectItems, { label: item, href: `/services/work/${item}`, itemDesc: projects[item].title }];
+  //   return [{ label: item, href: `/services/work/${item}`, itemDesc: projects[item].title }];
+  // });
+  const projectItems = Object.keys(projects).reduce(
+    (
+      acc: Array<{
+        label: string;
+        href: string;
+        itemDesc?: string;
+      }>,
+      item,
+    ) => {
+      return [...acc, { label: item, href: `/services/work/${item}`, itemDesc: projects[item].title }];
+    },
+    [] as Array<{
+      label: string;
+      href: string;
+      itemDesc?: string;
+    }>,
+  );
+
   return (
     <WorkPageContainer>
       <div className="work__section-wrapper">
@@ -43,11 +68,12 @@ const WorkPage = () => {
           ]}
         />
         <SectionNav
-          items={[
-            { label: 'KWORKS', href: '/services/work/kworks', itemDesc: 'GIS PROJECT' },
-            { label: 'KWORKS', href: '/services/work/kworks', itemDesc: 'GIS PROJECT' },
-            { label: 'KWORKS', href: '/services/work/kworks', itemDesc: 'GIS PROJECT' },
-          ]}
+          items={projectItems}
+          // items={[
+          //   { label: 'KWORKS', href: '/services/work/kworks', itemDesc: 'GIS PROJECT' },
+          //   { label: 'KWORKS', href: '/services/work/kworks', itemDesc: 'GIS PROJECT' },
+          //   { label: 'KWORKS', href: '/services/work/kworks', itemDesc: 'GIS PROJECT' },
+          // ]}
         />
       </div>
     </WorkPageContainer>
