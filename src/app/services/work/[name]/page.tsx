@@ -17,7 +17,6 @@ const DetailWorkPageContainer = styled.article`
   }
 
   .work-detail__section-wrapper {
-    /* padding-left: 4%; */
     width: 90vw;
     height: 100vh;
     background-color: ${palette.BACK_BLACK};

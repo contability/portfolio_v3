@@ -5,7 +5,7 @@ export default function ServiceLayout({ children }: { children: React.ReactNode 
   return (
     <html lang="en">
       <body>
-        <NavigationHome />
+        <NavigationHome theme="warm" />
         {children}
       </body>
     </html>
