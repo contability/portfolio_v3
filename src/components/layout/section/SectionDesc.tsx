@@ -7,7 +7,7 @@ interface SectionDescProps {
 
 const SectionDesc = ({ descriptionHeader = '', descriptions = [] }: SectionDescProps) => {
   return (
-    <section className="w-[25%] h-[100vh] flex flex-col justify-center items-start maxLg:h-fit maxLg:w-full maxLg:pt-[30%]">
+    <section className="w-[25%] h-[100vh] flex flex-col justify-center items-start maxLg:h-fit maxLg:w-full maxLg:pt-[30%] overflow-hidden">
       <h3 className=" mb-[2vh] pt-[5%] overflow-hidden tracking-[2px] uppercase font-montserrat text-[20px] font-semibold">
         {descriptionHeader}
       </h3>

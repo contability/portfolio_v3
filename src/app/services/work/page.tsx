@@ -12,6 +12,7 @@ const WorkPageContainer = styled.article`
   width: 100vw;
   background-color: ${palette.BACK_BLACK};
   color: ${palette.LINE_WHITE};
+  overflow: hidden;
 
   .work__section-wrapper {
     padding-left: 10%;
@@ -20,6 +21,7 @@ const WorkPageContainer = styled.article`
     @media (max-width: 1024px) {
       flex-direction: column;
       height: fit-content;
+      overflow: auto;
     }
 
     * {
@@ -27,8 +29,12 @@ const WorkPageContainer = styled.article`
     }
   }
 
+  @media (max-width: 1024px) {
+    overflow: auto;
+    padding: 0 5% 5% 2%;
+  }
+
   @media (max-width: 600px) {
-    padding: 0 5% 0 2%;
   }
 `;
 

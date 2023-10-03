@@ -26,8 +26,10 @@ const SectionNavContainer = styled.section`
   opacity: 1;
   transition-duration: 1s;
   transition-property: opacity;
+  overflow: auto;
 
   @media (max-width: 1024px) {
+    overflow: hidden;
     height: fit-content;
     width: 100%;
   }
@@ -54,7 +56,7 @@ const SectionNavContainer = styled.section`
     transform: translate(5px);
 
     @media (max-width: 1024px) {
-      font-size: 15vw;
+      font-size: 13vw;
     }
 
     &:hover {
@@ -74,6 +76,10 @@ const SectionNavContainer = styled.section`
     display: flex;
     flex-direction: column;
     gap: 2vw;
+  }
+
+  a {
+    max-width: 100%;
   }
 
   p {
