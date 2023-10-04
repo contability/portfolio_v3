@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.cdnfonts.com/css/grandesign-neue-roman');
 @import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
+@import url('https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css');
 
 @tailwind base;
 @tailwind components;

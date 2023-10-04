@@ -1,11 +1,10 @@
 'use client';
 
-import SectionDesc from '@component/layout/section/SectionDesc';
 import SectionNav from '@component/layout/section/SectionNav';
 import { palette } from '@styles/theme';
 import styled from 'styled-components';
 import { projects } from '../../../public/projects';
-import { SectionNavProps } from '../../../types/work';
+import SectionDesc from '@component/layout/section/SectionDesc';
 
 const WorkPageContainer = styled.article`
   height: 100vh;

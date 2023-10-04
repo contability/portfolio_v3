@@ -1,7 +1,7 @@
 // 'use client';
 
 import Link from 'next/link';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { styled } from 'styled-components';
 import { SectionNavProps } from '../../../types/work';
 
@@ -39,7 +39,7 @@ const SectionNavContainer = styled.section`
     z-index: 100;
     text-align: left;
     text-transform: uppercase;
-    font-size: 11vw;
+    font-size: 9vw;
     font-weight: 300;
     line-height: 0.95em;
     text-decoration: none;
@@ -76,6 +76,7 @@ const SectionNavContainer = styled.section`
     display: flex;
     flex-direction: column;
     gap: 2vw;
+    padding-top: 6vh;
   }
 
   a {
@@ -129,4 +130,4 @@ const SectionNav = ({ items }: SectionNavProps) => {
   );
 };
 
-export default SectionNav;
+export default React.memo(SectionNav);
