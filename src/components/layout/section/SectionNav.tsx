@@ -89,6 +89,7 @@ const SectionNavContainer = styled.section`
 
   @media screen and (max-width: 600px) {
     padding: 0 2% 0 2%;
+    margin-left: 0;
 
     .section-nav {
       margin-left: 0 !important;

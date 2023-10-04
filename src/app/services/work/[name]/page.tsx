@@ -48,7 +48,7 @@ const DetailWorkPageContainer = styled.article`
 
   .work-detail__section-summary {
     margin-top: 15vh;
-    margin-bottom: 15vh;
+    /* margin-bottom: 15vh; */
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,7 +1,9 @@
 'use client';
 
+import Card from '@component/services/about/Card';
 import { palette } from '@styles/theme';
 import styled from 'styled-components';
+import { aboutMe } from '../../../public/about';
 
 const AboutMePageContainer = styled.article`
   height: 100vh;
@@ -11,6 +13,7 @@ const AboutMePageContainer = styled.article`
 
   .about__section-wrapper {
     padding-left: 10%;
+    padding-right: 20%;
     display: flex;
 
     @media (max-width: 1024px) {
@@ -24,6 +27,17 @@ const AboutMePageContainer = styled.article`
 
     .about__section-contents {
       padding-top: 30%;
+
+      .about__section-contents__header {
+        font-size: 15vw;
+        letter-spacing: -1.8vw;
+      }
+
+      .about__section-contents__main {
+        display: flex;
+        flex-direction: column;
+        gap: 5vw;
+      }
     }
   }
 
@@ -37,7 +51,12 @@ const AboutMePage = () => {
     <AboutMePageContainer>
       <div className="about__section-wrapper">
         <section className="about__section-contents">
-          <div>About Me</div>
+          <h2 className="about__section-contents__header">About Me</h2>
+          <div className="about__section-contents__main">
+            {aboutMe.map((item, itemIndex) => (
+              <Card key={`introduce-${itemIndex}`} title={item.title} content={item.content} />
+            ))}
+          </div>
         </section>
       </div>
     </AboutMePageContainer>
