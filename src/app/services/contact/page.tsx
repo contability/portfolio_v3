@@ -1,9 +1,7 @@
 'use client';
 
-import Card from '@component/services/about/Card';
 import { palette } from '@styles/theme';
 import styled from 'styled-components';
-import { aboutMe } from '../../../public/about';
 import Link from 'next/link';
 import { BsGithub } from 'react-icons/bs';
 import { SiKakaotalk } from 'react-icons/si';
