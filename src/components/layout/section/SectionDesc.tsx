@@ -1,5 +1,7 @@
 'use client';
 
+import React from 'react';
+
 interface SectionDescProps {
   descriptionHeader?: string;
   descriptions?: string[];
@@ -20,7 +22,7 @@ const SectionDesc = ({ descriptionHeader = '', descriptions = [] }: SectionDescP
   );
 };
 
-export default SectionDesc;
+export default React.memo(SectionDesc);
 
 // .branding__section-left {
 //   width: 25%;

@@ -353,8 +353,8 @@ module.exports = {
     screens: {
       xl: { max: '1440px' },
       maxLg: { max: '1024px' },
-      md: { max: '750px' },
-      sm: { max: '380px' },
+      maxMd: { max: '750px' },
+      maxSm: { max: '550px' },
     },
     boxShadow: {
       base: '0px 8px 16px 0px #EAF2F8;',
