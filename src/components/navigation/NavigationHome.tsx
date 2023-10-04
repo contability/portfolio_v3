@@ -6,10 +6,17 @@ import React from 'react';
 import { styled } from 'styled-components';
 
 interface NavigationHomeProps {
-  colorPalette?: typeof palette;
+  theme?: 'dark' | 'warm';
+  // colorPalette?: typeof palette;
 }
 
-const NavigationContainer = styled.nav<{ $colorPalette: typeof palette }>`
+interface ContainerProps {
+  LINE: string;
+  BACKGROUND: string;
+}
+
+//  const NavigationContainer = styled.nav<{ $colorPalette: typeof palette }>`
+const NavigationContainer = styled.nav<{ $colorPalette: ContainerProps }>`
   z-index: 50;
   width: 6%;
   height: 100vh;
@@ -20,8 +27,8 @@ const NavigationContainer = styled.nav<{ $colorPalette: typeof palette }>`
   padding-bottom: 30px;
   display: flex;
   position: fixed;
-  color: ${({ $colorPalette }) => $colorPalette.LINE_WHITE};
-  background-color: ${({ $colorPalette }) => $colorPalette.BACK_BLACK};
+  color: ${({ $colorPalette }) => $colorPalette.LINE};
+  background-color: ${({ $colorPalette }) => $colorPalette.BACKGROUND};
 
   .branding__nav-menu {
     flex: 0 auto;
@@ -50,7 +57,7 @@ const NavigationContainer = styled.nav<{ $colorPalette: typeof palette }>`
     .branding__nav-line {
       width: 1px;
       height: 100px;
-      background-color: ${({ $colorPalette }) => $colorPalette.LINE_WHITE};
+      background-color: ${({ $colorPalette }) => $colorPalette.LINE};
       margin-top: 10px;
       margin-bottom: 80px;
     }
@@ -124,7 +131,18 @@ const NavigationContainer = styled.nav<{ $colorPalette: typeof palette }>`
   }
 `;
 
-const NavigationHome = ({ colorPalette = palette }: NavigationHomeProps) => {
+const NavigationHome = ({ theme = 'dark' }: NavigationHomeProps) => {
+  // const NavigationHome = ({ colorPalette = palette }: NavigationHomeProps) => {
+  const colorPalette =
+    theme === 'dark'
+      ? {
+          LINE: palette.LINE_WHITE,
+          BACKGROUND: palette.FONT_BLACK,
+        }
+      : {
+          LINE: palette.LINE,
+          BACKGROUND: palette.BACK_DEFAULT,
+        };
   return (
     <NavigationContainer $colorPalette={colorPalette}>
       <ul>

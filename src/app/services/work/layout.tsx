@@ -7,7 +7,7 @@ export default function ServiceLayout({ children }: { children: React.ReactNode 
   return (
     <html lang="en">
       <body>
-        <NavigationHome colorPalette={palette} />
+        <NavigationHome />
         {children}
       </body>
     </html>

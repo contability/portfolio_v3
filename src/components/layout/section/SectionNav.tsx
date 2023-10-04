@@ -3,14 +3,7 @@
 import Link from 'next/link';
 import { useEffect } from 'react';
 import { styled } from 'styled-components';
-
-interface SectionNavProps {
-  items: Array<{
-    label: string;
-    href: string;
-    itemDesc?: string;
-  }>;
-}
+import { SectionNavProps } from '../../../types/work';
 
 const SectionNavContainer = styled.section`
   width: 65%;
@@ -33,8 +26,10 @@ const SectionNavContainer = styled.section`
   opacity: 1;
   transition-duration: 1s;
   transition-property: opacity;
+  overflow: auto;
 
   @media (max-width: 1024px) {
+    overflow: hidden;
     height: fit-content;
     width: 100%;
   }
@@ -61,7 +56,7 @@ const SectionNavContainer = styled.section`
     transform: translate(5px);
 
     @media (max-width: 1024px) {
-      font-size: 15vw;
+      font-size: 13vw;
     }
 
     &:hover {
@@ -83,12 +78,17 @@ const SectionNavContainer = styled.section`
     gap: 2vw;
   }
 
+  a {
+    max-width: 100%;
+  }
+
   p {
     text-align: left;
   }
 
   @media screen and (max-width: 600px) {
     padding: 0 2% 0 2%;
+    margin-left: 0;
 
     .section-nav {
       margin-left: 0 !important;
