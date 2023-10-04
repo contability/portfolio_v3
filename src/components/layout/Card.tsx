@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardProps } from '../../../types/about';
+import { CardProps } from '../../types/about';
 
 const Card = ({ title, content }: CardProps) => {
   return (

@@ -1,6 +1,6 @@
 'use client';
 
-import Card from '@component/services/about/Card';
+import Card from '@component/layout/Card';
 import { palette } from '@styles/theme';
 import styled from 'styled-components';
 import { aboutMe } from '../../../public/about';

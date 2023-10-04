@@ -39,7 +39,7 @@ const SectionNavContainer = styled.section`
     z-index: 100;
     text-align: left;
     text-transform: uppercase;
-    font-size: 11vw;
+    font-size: 9vw;
     font-weight: 300;
     line-height: 0.95em;
     text-decoration: none;
@@ -76,6 +76,7 @@ const SectionNavContainer = styled.section`
     display: flex;
     flex-direction: column;
     gap: 2vw;
+    padding-top: 6vh;
   }
 
   a {
