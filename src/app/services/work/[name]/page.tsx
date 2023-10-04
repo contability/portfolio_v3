@@ -61,18 +61,22 @@ const DetailWorkPageContainer = styled.article`
       max-width: 50%;
       margin-left: auto;
       margin-right: auto;
-      font-size: 3vw;
+      font-size: 50px;
       font-weight: 300;
       line-height: 1.3em;
       transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
       transform-style: preserve-3d;
 
+      @media (max-width: 1024px) {
+        font-size: 40px;
+      }
+
       @media (max-width: 750px) {
-        font-size: 5vw;
+        font-size: 30px;
       }
 
       @media (max-width: 550px) {
-        font-size: 5vw;
+        font-size: 25px;
       }
     }
 
@@ -80,15 +84,26 @@ const DetailWorkPageContainer = styled.article`
       width: 50%;
       display: flex;
       justify-content: space-between;
+      gap: 24px;
+
+      @media (max-width: 1024px) {
+        flex-direction: column;
+      }
 
       .work-detail__section-summary__information-detail {
         max-width: 50%;
 
-        p:first-child {
-          text-decoration: underline;
-          text-transform: uppercase;
-          margin-bottom: 16px;
-          font-weight: 500;
+        @media (max-width: 1024px) {
+          max-width: 100%;
+        }
+
+        p {
+          &:first-child {
+            text-decoration: underline;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            font-weight: 500;
+          }
         }
       }
     }
