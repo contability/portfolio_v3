@@ -109,6 +109,7 @@ video {
 
 body {
   min-height: 100vh;
+  overflow: hidden;
 }
 
 /* HTML5 display-role reset for older browsers */
