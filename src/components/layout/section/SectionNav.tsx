@@ -115,7 +115,7 @@ const SectionNav = ({ items }: SectionNavProps) => {
   }, []);
 
   return (
-    <SectionNavContainer className="section-nav fade">
+    <SectionNavContainer className="section-nav fade scrollbar-hide">
       <ul>
         {items.map((item, itemIndex) => (
           <li key={`section-navigation__${itemIndex}`}>

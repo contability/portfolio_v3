@@ -139,7 +139,7 @@ const DetailWorkPageContainer = styled.article`
 const DetailWorkPage = ({ params }: { params: { name: string } }) => {
   const projectInfo = projects[params.name];
   return (
-    <DetailWorkPageContainer>
+    <DetailWorkPageContainer className="scrollbar-hide">
       <div className="work-detail__section-wrapper">
         <section className="work-detail__section-title">{params.name}</section>
         <section className="work-detail__section-summary">
