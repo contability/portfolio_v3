@@ -76,7 +76,11 @@ const SectionNavContainer = styled.section`
     display: flex;
     flex-direction: column;
     gap: 2vw;
-    padding-top: 6vh;
+    padding-top: 10vh;
+
+    @media screen and (max-width: 1024px) {
+      padding-top: 5vh;
+    }
   }
 
   a {
