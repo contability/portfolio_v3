@@ -54,7 +54,7 @@ const RootPage = () => {
             },
             {
               label: 'about',
-              href: '/',
+              href: '/services/about',
             },
             {
               label: 'contact',
