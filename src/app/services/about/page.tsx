@@ -13,7 +13,7 @@ const AboutMePageContainer = styled.article`
 
   .about__section-wrapper {
     padding-left: 10%;
-    padding-right: 20%;
+    padding-right: 15%;
     display: flex;
 
     @media (max-width: 1024px) {
@@ -31,6 +31,15 @@ const AboutMePageContainer = styled.article`
       .about__section-contents__header {
         font-size: 15vw;
         letter-spacing: -1.8vw;
+        margin-bottom: 6vh;
+
+        @media (max-width: 1024px) {
+          font-size: 15vw;
+        }
+
+        @media (max-width: 600px) {
+          font-size: 20vw;
+        }
       }
 
       .about__section-contents__main {

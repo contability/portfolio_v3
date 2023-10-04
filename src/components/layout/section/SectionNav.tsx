@@ -1,7 +1,7 @@
 // 'use client';
 
 import Link from 'next/link';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { styled } from 'styled-components';
 import { SectionNavProps } from '../../../types/work';
 
@@ -130,4 +130,4 @@ const SectionNav = ({ items }: SectionNavProps) => {
   );
 };
 
-export default SectionNav;
+export default React.memo(SectionNav);
