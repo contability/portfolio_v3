@@ -15,6 +15,7 @@ const ExperiencePageContainer = styled.article`
 
   .work__section-wrapper {
     padding-left: 10%;
+    width: 100%;
     display: flex;
 
     @media (max-width: 1024px) {
@@ -25,6 +26,17 @@ const ExperiencePageContainer = styled.article`
 
     * {
       font-family: Montserrat, sans-serif;
+    }
+
+    .work__section-nav {
+      /* width: 100%; */
+      /* padding: 50vh 3% 0 3%;
+      height: 50vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center; */
+      /* position: relative; */
     }
   }
 
@@ -38,11 +50,6 @@ const ExperiencePageContainer = styled.article`
 `;
 
 const ExperiencePage = () => {
-  // let projectItems = Object.keys(projects).map(item => {
-  //   if (projectItems)
-  //     return [...projectItems, { label: item, href: `/services/work/${item}`, itemDesc: projects[item].title }];
-  //   return [{ label: item, href: `/services/work/${item}`, itemDesc: projects[item].title }];
-  // });
   const projectItems = Object.keys(projects).reduce(
     (
       acc: Array<{
@@ -52,7 +59,7 @@ const ExperiencePage = () => {
       }>,
       item,
     ) => {
-      return [...acc, { label: item, href: `/services/work/${item}`, itemDesc: projects[item].title }];
+      return [...acc, { label: item, href: `/services/experience/${item}`, itemDesc: projects[item].title }];
     },
     [] as Array<{
       label: string;
@@ -72,14 +79,9 @@ const ExperiencePage = () => {
             'I am still learning and acquiring new technologies even now.',
           ]}
         />
-        <SectionNav
-          items={projectItems}
-          // items={[
-          //   { label: 'KWORKS', href: '/services/work/kworks', itemDesc: 'GIS PROJECT' },
-          //   { label: 'KWORKS', href: '/services/work/kworks', itemDesc: 'GIS PROJECT' },
-          //   { label: 'KWORKS', href: '/services/work/kworks', itemDesc: 'GIS PROJECT' },
-          // ]}
-        />
+        <div className="work__section-nav">
+          <SectionNav items={projectItems} />
+        </div>
       </div>
     </ExperiencePageContainer>
   );
