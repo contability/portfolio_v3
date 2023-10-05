@@ -76,7 +76,11 @@ const SectionNavContainer = styled.section`
     display: flex;
     flex-direction: column;
     gap: 2vw;
-    padding-top: 6vh;
+    padding-top: 10vh;
+
+    @media screen and (max-width: 1024px) {
+      padding-top: 5vh;
+    }
   }
 
   a {
@@ -115,7 +119,7 @@ const SectionNav = ({ items }: SectionNavProps) => {
   }, []);
 
   return (
-    <SectionNavContainer className="section-nav fade">
+    <SectionNavContainer className="section-nav fade scrollbar-hide">
       <ul>
         {items.map((item, itemIndex) => (
           <li key={`section-navigation__${itemIndex}`}>

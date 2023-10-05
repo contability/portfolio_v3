@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import { aboutMe } from '../../../public/about';
 
 const AboutMePageContainer = styled.article`
-  height: 100vh;
   width: 100vw;
   background-color: ${palette.BACK_DEFAULT};
   color: ${palette.LINE};

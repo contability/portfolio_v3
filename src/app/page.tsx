@@ -49,8 +49,8 @@ const RootPage = () => {
         <SectionNav
           items={[
             {
-              label: 'work',
-              href: '/services/work',
+              label: 'experience',
+              href: '/services/experience',
             },
             {
               label: 'about',
