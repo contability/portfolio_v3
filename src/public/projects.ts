@@ -30,6 +30,8 @@ export const projects: IProjects = {
       '클라이언트는 jQuery가 사용되었고 기본적으로 REST API 방식으로 통신이 이루어졌으며 일부 외부 연계 데이터 서버와는 SOAP API 방식으로 통신하였습니다.',
       '주요 사용 기술로는 맵 표현 및 조작을 위한 openLayers, 통계와 같은 보고용 리포팅 툴 clipReport, 일부 UI에서는 easyUI 가 사용되었습니다.',
       '직접 서버 및 데이터베이스 등 인프라를 구축하는 On-Premise 방식으로 운영 하였습니다.',
+      '저의 첫 프로젝트 경험이었으며 ',
+      '직접 서버 및 데이터베이스 등 인프라를 구축하는 On-Premise 방식으로 운영 하였습니다.',
     ],
     images: [
       'image_projects_1_1.jpg',

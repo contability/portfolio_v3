@@ -204,6 +204,23 @@ const DetailWorkPage = ({ params }: { params: { name: string } }) => {
               <></>
             );
           })}
+          {projectInfo.description.map((desc, descIndex) => {
+            return descIndex > 5 ? <p key={`project-description__${descIndex}`}>{desc}</p> : <></>;
+          })}
+          {projectInfo.images?.map((image, imageIndex) => {
+            return imageIndex > 2 ? (
+              <p key={`project-description__${imageIndex}`}>
+                <Img
+                  src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/project/${image}`}
+                  width={'75vw'}
+                  objectFit="contain"
+                  aspect={'16/9'}
+                />
+              </p>
+            ) : (
+              <></>
+            );
+          })}
         </section>
       </div>
     </DetailWorkPageContainer>
