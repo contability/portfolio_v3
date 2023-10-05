@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { projects } from '../../../public/projects';
 import SectionDesc from '@component/layout/section/SectionDesc';
 
-const WorkPageContainer = styled.article`
+const ExperiencePageContainer = styled.article`
   height: 100vh;
   width: 100vw;
   background-color: ${palette.BACK_BLACK};
@@ -37,7 +37,7 @@ const WorkPageContainer = styled.article`
   }
 `;
 
-const WorkPage = () => {
+const ExperiencePage = () => {
   // let projectItems = Object.keys(projects).map(item => {
   //   if (projectItems)
   //     return [...projectItems, { label: item, href: `/services/work/${item}`, itemDesc: projects[item].title }];
@@ -62,10 +62,10 @@ const WorkPage = () => {
   );
 
   return (
-    <WorkPageContainer>
+    <ExperiencePageContainer>
       <div className="work__section-wrapper">
         <SectionDesc
-          descriptionHeader="WORK"
+          descriptionHeader="EXPERIENCE"
           descriptions={[
             'This is a list of projects that represent my development career.',
             'The world of development is evolving even at this moment, and my role has been no different over the past three years.',
@@ -81,8 +81,8 @@ const WorkPage = () => {
           // ]}
         />
       </div>
-    </WorkPageContainer>
+    </ExperiencePageContainer>
   );
 };
 
-export default WorkPage;
+export default ExperiencePage;

@@ -24,7 +24,7 @@ export const projects: IProjects = {
     summary:
       '지방자치단체 및 공공 기관에서 유의미한 공간 정보를 간단하고 효과적으로 활용하기 위한 시스템으로 비용 절감 및 업무 효율 향상을 목적으로 하는 B2B 프로젝트입니다.',
     description: [
-      '도로, 상수, 하수, 공원 등등 해당 기관에서 관리하는 모든 공간 정보를 지도로 표현하고 조회 및 수정, 삭제할 수 있도록 구현되었습니다.',
+      '도로, 상수, 하수, 공원 등등 해당 기관에서 관리하는 모든 공간 정보를 지도로 표현하고 조회 및 수정, 삭제할 수 있도록 구현하였습니다.',
       '전자 정부 프레임워크를 활용하여 개발 되었으며 데이터 갱신 batch 프로그램의 경우 spring boot로 구현하였습니다.',
       '데이터베이스는 해당 기관의 서버 상태, 계약과 같은 여러 상황에 따라 Oracle, MySQL, postgreSQL 등 여러가지 데이터베이스를 다루었습니다.',
       '클라이언트는 jQuery가 사용되었고 기본적으로 REST API 방식으로 통신이 이루어졌으며 일부 외부 연계 데이터 서버와는 SOAP API 방식으로 통신하였습니다.',
@@ -47,14 +47,12 @@ export const projects: IProjects = {
     role: 'front-end development',
     responsibility: 'react.js application development, AWS infrastructure construction',
     summary:
-      'ERC20 표준 확장 암호 화폐를 예치하여 상품 타입(고정형/가변형)에 따라 보상으로 지급되는 보상 토큰을 받는 방식으로 작동. 또한 외부 토큰을 확장 토큰으로 교환 하여 사용할 수 있게 하는 교환소 또한 구현',
+      'ERC20 표준 확장 암호 화폐를 예치하여 상품 타입(고정형/가변형)에 따라 책정된 보상 만큼 유저에게 제공하는 B2C 서비스 입니다.',
     description: [
-      '도로, 상수, 하수, 공원 등등 해당 기관에서 관리하는 모든 공간 정보를 지도로 표현하고 조회 및 수정, 삭제할 수 있도록 구현되었습니다.',
-      '전자 정부 프레임워크를 활용하여 개발 되었으며 데이터 갱신 batch 프로그램의 경우 spring boot로 구현하였습니다.',
-      '데이터베이스는 해당 기관의 서버 상태, 계약과 같은 여러 상황에 따라 Oracle, MySQL, postgreSQL 등 여러가지 데이터베이스를 다루었습니다.',
-      '클라이언트는 jQuery가 사용되었고 기본적으로 REST API 방식으로 통신이 이루어졌으며 일부 외부 연계 데이터 서버와는 SOAP API 방식으로 통신하였습니다',
-      '주요 사용 기술로는 맵 표현 및 조작을 위한 openLayers, 통계와 같은 보고용 리포팅 툴 clipReport, 일부 UI에서는 easyUI 가 사용되었습니다.',
-      '직접 서버 및 데이터베이스 등 인프라를 구축하는 On-Premise 방식으로 운영 하였습니다.',
+      'web3.js를 사용하여 예치, 출금, 보상 수령 및 외부 토큰을 확장 토큰으로 교환 하여 사용할 수 있게 하는 교환소를 구현하였습니다.',
+      'solidity 언어를 통해 smart contract를 배포 및 사용하였습니다.',
+      '퍼블리싱은 각각 admin은 materialUI를, user는 직접 components를 작성하여 구현하였습니다.',
+      '서버는 AWS EC2를 활용하였습니다.',
     ],
     images: ['image_projects_2_1.png', 'image_projects_2_2.png', 'image_projects_2_3.png'],
   },
