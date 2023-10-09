@@ -4,6 +4,7 @@ import { palette } from '@styles/theme';
 import styled from 'styled-components';
 import { projects } from '../../../../public/projects';
 import Img from '@component/image/Img';
+import FirstMedia from '@component/services/experience/FirstMedia';
 
 const DetailWorkPageContainer = styled.article`
   height: 100%;
@@ -153,29 +154,22 @@ const DetailWorkPage = ({ params }: { params: { name: string } }) => {
               <p>responsibility</p>
               <p>{projectInfo.responsibility}</p>
             </div>
-            {projectInfo.url && (
+            {projectInfo.link?.url && (
               <div className="work-detail__section-summary__information-detail">
                 <p>url</p>
-                <p>{projectInfo.url || ''}</p>
+                <p>{projectInfo.link?.url || ''}</p>
               </div>
             )}
           </div>
         </section>
         <section className="work-detail__section-description">
-          {projectInfo.images && projectInfo.images.length > 0 && (
-            <Img
-              src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/project/${projectInfo.images[0]}`}
-              width={'75vw'}
-              objectFit="contain"
-              aspect={'16/9'}
-            />
-          )}
+          <FirstMedia projectInfo={projectInfo} />
           {projectInfo.description.map((desc, descIndex) => {
             return descIndex < 3 ? <p key={`project-description__${descIndex}`}>{desc}</p> : <></>;
           })}
           {projectInfo.images?.map((image, imageIndex) => {
             return imageIndex === 1 ? (
-              <p key={`project-description__${imageIndex}`}>
+              <p key={`project-image__${imageIndex}`}>
                 <Img
                   src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/project/${image}`}
                   width={'75vw'}
@@ -192,7 +186,24 @@ const DetailWorkPage = ({ params }: { params: { name: string } }) => {
           })}
           {projectInfo.images?.map((image, imageIndex) => {
             return imageIndex === 2 ? (
-              <p key={`project-description__${imageIndex}`}>
+              <p key={`project-image__${imageIndex}`}>
+                <Img
+                  src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/project/${image}`}
+                  width={'75vw'}
+                  objectFit="contain"
+                  aspect={'16/9'}
+                />
+              </p>
+            ) : (
+              <></>
+            );
+          })}
+          {projectInfo.description.map((desc, descIndex) => {
+            return descIndex > 5 ? <p key={`project-description__${descIndex}`}>{desc}</p> : <></>;
+          })}
+          {projectInfo.images?.map((image, imageIndex) => {
+            return imageIndex > 2 ? (
+              <p key={`project-image__${imageIndex}`}>
                 <Img
                   src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/project/${image}`}
                   width={'75vw'}

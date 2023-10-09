@@ -6,7 +6,7 @@ import { styled } from 'styled-components';
 import { SectionNavProps } from '../../../types/work';
 
 const SectionNavContainer = styled.section`
-  width: 65%;
+  width: 60vw;
   height: 90vh;
   float: right;
   grid-column-gap: 16px;
@@ -76,7 +76,8 @@ const SectionNavContainer = styled.section`
     display: flex;
     flex-direction: column;
     gap: 2vw;
-    padding-top: 10vh;
+    /* padding-top: 10vh; */
+    max-height: 50vh;
 
     @media screen and (max-width: 1024px) {
       padding-top: 5vh;
