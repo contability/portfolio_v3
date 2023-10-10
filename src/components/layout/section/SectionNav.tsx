@@ -29,7 +29,6 @@ const SectionNavContainer = styled.section`
   overflow: auto;
 
   @media (max-width: 1024px) {
-    overflow: hidden;
     height: fit-content;
     width: 100%;
   }

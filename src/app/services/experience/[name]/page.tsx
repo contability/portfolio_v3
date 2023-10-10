@@ -10,6 +10,7 @@ const DetailWorkPageContainer = styled.article`
   height: 100%;
   width: 100vw;
   padding-left: 6%;
+  padding-bottom: 5%;
   background-color: ${palette.BACK_BLACK};
   color: ${palette.LINE_WHITE};
 
@@ -18,13 +19,13 @@ const DetailWorkPageContainer = styled.article`
   }
 
   .work-detail__section-wrapper {
-    width: 90vw;
+    width: 89vw;
     background-color: ${palette.BACK_BLACK};
     display: flex;
     flex-direction: column;
 
-    @media (max-width: 1024px) {
-      width: 90vw;
+    @media (max-width: 600px) {
+      width: 96vw;
     }
 
     * {
@@ -36,7 +37,7 @@ const DetailWorkPageContainer = styled.article`
     text-transform: uppercase;
     font-size: 11vw;
     width: 100%;
-    height: 100vh;
+    height: 95vh;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -62,22 +63,22 @@ const DetailWorkPageContainer = styled.article`
       max-width: 50%;
       margin-left: auto;
       margin-right: auto;
-      font-size: 50px;
+      font-size: 3vw;
       font-weight: 300;
       line-height: 1.3em;
       transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
       transform-style: preserve-3d;
 
-      @media (max-width: 1024px) {
-        font-size: 40px;
-      }
+      /* @media (max-width: 1024px) {
+        font-size: 3vw;
+      } */
 
       @media (max-width: 750px) {
-        font-size: 30px;
+        font-size: 4.5vw;
       }
 
       @media (max-width: 550px) {
-        font-size: 25px;
+        font-size: 6vw;
       }
     }
 
@@ -117,23 +118,36 @@ const DetailWorkPageContainer = styled.article`
     margin-right: auto;
     padding-left: 5%;
     padding-right: 5%;
-    font-size: 1vw;
+    font-size: 1.5vw;
+    font-weight: 300;
 
     @media (max-width: 1024px) {
-      font-size: 1.5vw;
+      font-size: 2vw;
     }
 
     @media (max-width: 750px) {
-      font-size: 2.3vw;
+      font-size: 2.8vw;
     }
 
     @media (max-width: 550px) {
-      font-size: 5vw;
+      font-size: 4vw;
+    }
+
+    .work-detail__section-description__detail {
+      max-width: 85%;
+      margin-left: auto;
+      margin-right: auto;
+      transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+      transform-style: preserve-3d;
+    }
+
+    .work-detail__section-description__image {
+      padding: 5% 0;
     }
   }
 
   @media (max-width: 600px) {
-    padding: 0 5% 0 2%;
+    padding: 0 5% 5% 2%;
   }
 `;
 
@@ -142,8 +156,10 @@ const DetailWorkPage = ({ params }: { params: { name: string } }) => {
   return (
     <DetailWorkPageContainer className="scrollbar-hide">
       <div className="work-detail__section-wrapper">
-        <section className="work-detail__section-title">{params.name}</section>
-        <section className="work-detail__section-summary">
+        <section key="work-detail__section-title" className="work-detail__section-title">
+          {params.name}
+        </section>
+        <section key="work-detail__section-summary" className="work-detail__section-summary">
           <p className="work-detail__section-summary__header">{projectInfo.summary}</p>
           <div className="work-detail__section-summary__information">
             <div className="work-detail__section-summary__information-detail">
@@ -162,55 +178,73 @@ const DetailWorkPage = ({ params }: { params: { name: string } }) => {
             )}
           </div>
         </section>
-        <section className="work-detail__section-description">
+        <section key="work-detail__section-description" className="work-detail__section-description">
           <FirstMedia projectInfo={projectInfo} />
           {projectInfo.description.map((desc, descIndex) => {
-            return descIndex < 3 ? <p key={`project-description__${descIndex}`}>{desc}</p> : <></>;
+            return descIndex < 3 ? (
+              <p key={`project-description__${descIndex}`} className="work-detail__section-description__detail">
+                {desc}
+              </p>
+            ) : (
+              <></>
+            );
           })}
           {projectInfo.images?.map((image, imageIndex) => {
             return imageIndex === 1 ? (
-              <p key={`project-image__${imageIndex}`}>
+              <figure key={`project-image__${imageIndex}`} className="work-detail__section-description__image">
                 <Img
                   src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/project/${image}`}
                   width={'75vw'}
                   objectFit="contain"
                   aspect={'16/9'}
                 />
-              </p>
+              </figure>
             ) : (
               <></>
             );
           })}
           {projectInfo.description.map((desc, descIndex) => {
-            return descIndex > 2 && descIndex < 6 ? <p key={`project-description__${descIndex}`}>{desc}</p> : <></>;
+            return descIndex > 2 && descIndex < 6 ? (
+              <p key={`project-description__${descIndex}`} className="work-detail__section-description__detail">
+                {desc}
+              </p>
+            ) : (
+              <></>
+            );
           })}
           {projectInfo.images?.map((image, imageIndex) => {
             return imageIndex === 2 ? (
-              <p key={`project-image__${imageIndex}`}>
+              <div key={`project-image__${imageIndex}`} className="work-detail__section-description__image">
                 <Img
                   src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/project/${image}`}
                   width={'75vw'}
                   objectFit="contain"
                   aspect={'16/9'}
                 />
-              </p>
+              </div>
             ) : (
               <></>
             );
           })}
           {projectInfo.description.map((desc, descIndex) => {
-            return descIndex > 5 ? <p key={`project-description__${descIndex}`}>{desc}</p> : <></>;
+            return descIndex > 5 ? (
+              <p key={`project-description__${descIndex}`} className="work-detail__section-description__detail">
+                {desc}
+              </p>
+            ) : (
+              <></>
+            );
           })}
           {projectInfo.images?.map((image, imageIndex) => {
             return imageIndex > 2 ? (
-              <p key={`project-image__${imageIndex}`}>
+              <figure key={`project-image__${imageIndex}`} className="work-detail__section-description__image">
                 <Img
                   src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/project/${image}`}
                   width={'75vw'}
                   objectFit="contain"
                   aspect={'16/9'}
                 />
-              </p>
+              </figure>
             ) : (
               <></>
             );

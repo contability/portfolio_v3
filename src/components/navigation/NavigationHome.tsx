@@ -15,7 +15,6 @@ interface ContainerProps {
   BACKGROUND: string;
 }
 
-//  const NavigationContainer = styled.nav<{ $colorPalette: typeof palette }>`
 const NavigationContainer = styled.nav<{ $colorPalette: ContainerProps }>`
   z-index: 50;
   width: 6%;
@@ -81,7 +80,7 @@ const NavigationContainer = styled.nav<{ $colorPalette: ContainerProps }>`
     width: 100%;
     height: auto;
     flex-direction: row;
-    padding: 2% 5% 0 2%;
+    padding: 2% 5% 2% 2%;
     position: static;
 
     ul {
