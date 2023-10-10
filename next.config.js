@@ -21,6 +21,9 @@ const nextConfig = {
   },
   compiler: {
     removeConsole: isProdRemoveConsoleOption,
+    styledComponents: {
+      displayName: false,
+    },
   },
 };
 

@@ -92,11 +92,22 @@ const AboutMePage = () => {
           <header className="about__section-contents__header">
             <h2>About Me</h2>
           </header>
-
-          <div className="about__section-contents__main">
+          {/* <div className="about__section-contents__main">
             {aboutMe.map((item, itemIndex) => (
               <Card key={`introduce-${itemIndex}`} title={item.title} content={item.content} />
             ))}
+          </div> */}
+          <div className="about__section-contents__main">
+            <p>저는 프론트앤드 개발자 정신형입니다.</p>
+            <p>
+              사용자에게 직접적으로 편안한 UI를 제공한다는 부분에 매료 되었고 CSS를 통한 사이트 디자인 구현, 백앤드와의
+              협업으로 가져온 데이터를 파싱하고 가공 그리고 표현하기 위한 각종 라이브러리 등을 시도하는 것은 저에게
+              즐거움입니다.
+            </p>
+            <p>
+              지금까지 spring-framework를 다루며 full stack 개발을 시작으로 frontend로 전향한 후 HTML/CSS, 데이터
+              fetching, 보안 관리, 유지보수 관
+            </p>
           </div>
         </section>
       </div>
