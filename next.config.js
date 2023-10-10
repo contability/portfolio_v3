@@ -9,7 +9,6 @@ const isProdRemoveConsoleOption =
 const nextConfig = {
   reactStrictMode: process.env.NODE_ENV === 'production' ? false : true,
   swcMinify: true,
-  distDir: 'build',
   images: {
     domains: ['https://furiums-portfolio.s3.us-west-1.amazonaws.com'],
     remotePatterns: [
