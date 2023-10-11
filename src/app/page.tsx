@@ -7,6 +7,8 @@ import Link from 'next/link';
 import NavigationDefault from '@component/navigation/NavigationDefault';
 import SectionDesc from '@component/layout/section/SectionDesc';
 import SectionNav from '@component/layout/section/SectionNav';
+import TransitionBackground from '@component/layout/TransitionBackground';
+import AppLayout from '@component/layout/AppLayout';
 
 const Container = styled.main`
   width: 100vw;
@@ -35,36 +37,41 @@ const RootPage = () => {
     document.querySelector('.branding__section-right')?.classList.remove('fade');
   }, []);
   return (
-    <Container>
-      <NavigationDefault />
-      <div className="branding__section-wrapper">
-        <SectionDesc
-          descriptionHeader="shinhyungjung"
-          descriptions={[
-            'I am a front-end developer living in Seoul',
-            'I believe in working together to successfully complete projects',
-            'I enjoy constantly learning and developing',
-          ]}
-        />
-        <SectionNav
-          isLink={false}
-          items={[
-            {
-              label: 'experience',
-              href: '/services/experience',
-            },
-            {
-              label: 'about',
-              href: '/services/about',
-            },
-            {
-              label: 'contact',
-              href: '/services/contact',
-            },
-          ]}
-        />
-      </div>
-    </Container>
+    <>
+      <TransitionBackground theme="dark" />
+      <AppLayout isDown={true}>
+        <Container>
+          <NavigationDefault />
+          <div className="branding__section-wrapper">
+            <SectionDesc
+              descriptionHeader="shinhyungjung"
+              descriptions={[
+                'I am a front-end developer living in Seoul',
+                'I believe in working together to successfully complete projects',
+                'I enjoy constantly learning and developing',
+              ]}
+            />
+            <SectionNav
+              isLink={false}
+              items={[
+                {
+                  label: 'experience',
+                  href: '/services/experience',
+                },
+                {
+                  label: 'about',
+                  href: '/services/about',
+                },
+                {
+                  label: 'contact',
+                  href: '/services/contact',
+                },
+              ]}
+            />
+          </div>
+        </Container>
+      </AppLayout>
+    </>
   );
 };
 
