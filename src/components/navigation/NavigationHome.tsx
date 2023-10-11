@@ -7,16 +7,10 @@ import { styled } from 'styled-components';
 
 interface NavigationHomeProps {
   theme?: 'dark' | 'warm';
-  // colorPalette?: typeof palette;
-}
-
-interface ContainerProps {
-  LINE: string;
-  BACKGROUND: string;
 }
 
 //  const NavigationContainer = styled.nav<{ $colorPalette: typeof palette }>`
-const NavigationContainer = styled.nav<{ $colorPalette: ContainerProps }>`
+const NavigationContainer = styled.nav<{ $colorPalette: ThemeProps }>`
   z-index: 50;
   width: 6%;
   height: 100vh;

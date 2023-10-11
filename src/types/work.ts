@@ -4,4 +4,5 @@ export interface SectionNavProps {
     href: string;
     itemDesc?: string;
   }>;
+  isLink?: boolean;
 }
