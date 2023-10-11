@@ -45,6 +45,17 @@ const DetailWorkPageContainer = styled.article`
     background-color: ${palette.BACK_DEFAULT};
     color: ${palette.LINE};
     letter-spacing: -1vw;
+    animation: slideDown 1s cubic-bezier(0.04, 0.48, 0.59, 0.19);
+
+    @keyframes slideDown {
+      from {
+        transform: translate(0, -95vh);
+      }
+
+      to {
+        transform: translate(0, 0);
+      }
+    }
   }
 
   .work-detail__section-summary {
@@ -66,12 +77,6 @@ const DetailWorkPageContainer = styled.article`
       font-size: 3vw;
       font-weight: 300;
       line-height: 1.3em;
-      transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-      transform-style: preserve-3d;
-
-      /* @media (max-width: 1024px) {
-        font-size: 3vw;
-      } */
 
       @media (max-width: 750px) {
         font-size: 4.5vw;
