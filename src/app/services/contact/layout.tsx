@@ -1,13 +1,16 @@
+import AppLayout from '@component/layout/AppLayout';
+import TransitionBackground from '@component/layout/TransitionBackground';
 import NavigationHome from '@component/navigation/NavigationHome';
 import { palette } from '@styles/theme';
 
 export default function ServiceLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        <NavigationHome theme="dark" />
+    <>
+      <TransitionBackground theme="warm" />
+      <AppLayout>
+        <NavigationHome />
         {children}
-      </body>
-    </html>
+      </AppLayout>
+    </>
   );
 }
