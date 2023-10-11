@@ -45,7 +45,7 @@ const DetailWorkPageContainer = styled.article`
     background-color: ${palette.BACK_DEFAULT};
     color: ${palette.LINE};
     letter-spacing: -1vw;
-    animation: slideDown 1s cubic-bezier(0.04, 0.48, 0.59, 0.19);
+    animation: slideDown 1s cubic-bezier(0.04, 0.48, 0.89, 0.19);
 
     @keyframes slideDown {
       from {
@@ -54,6 +54,26 @@ const DetailWorkPageContainer = styled.article`
 
       to {
         transform: translate(0, 0);
+      }
+    }
+
+    .work-detail__section-title__label {
+      /* 총 3초 동안 실행되고 2초 지연 -> 1초 동안 페이드 인 되는 효과 */
+      animation: 2s ease 0s normal forwards 1 fadeIn;
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        66% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+          transform: translate3d(0px, -2vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+            skew(0deg, 0deg);
+          transform-style: preserve-3d;
+        }
       }
     }
   }
@@ -142,8 +162,6 @@ const DetailWorkPageContainer = styled.article`
       max-width: 85%;
       margin-left: auto;
       margin-right: auto;
-      transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-      transform-style: preserve-3d;
     }
 
     .work-detail__section-description__image {
@@ -162,7 +180,7 @@ const DetailWorkPage = ({ params }: { params: { name: string } }) => {
     <DetailWorkPageContainer className="scrollbar-hide">
       <div className="work-detail__section-wrapper">
         <section key="work-detail__section-title" className="work-detail__section-title">
-          {params.name}
+          <h2 className="work-detail__section-title__label">{params.name}</h2>
         </section>
         <section key="work-detail__section-summary" className="work-detail__section-summary">
           <p className="work-detail__section-summary__header">{projectInfo.summary}</p>
