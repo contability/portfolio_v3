@@ -45,7 +45,7 @@ const DetailWorkPageContainer = styled.article`
     background-color: ${palette.BACK_DEFAULT};
     color: ${palette.LINE};
     letter-spacing: -1vw;
-    animation: slideDown 1s cubic-bezier(0.04, 0.48, 0.59, 0.19);
+    animation: slideDown 1s cubic-bezier(0.04, 0.48, 0.89, 0.19);
 
     @keyframes slideDown {
       from {
