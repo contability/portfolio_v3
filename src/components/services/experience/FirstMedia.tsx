@@ -15,6 +15,7 @@ const FirstMedia = ({ projectInfo }: Record<string, any>) => {
     else
       return (
         <Img
+          className=" py-[5%]"
           src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/project/${projectInfo.images[0]}`}
           width={'75vw'}
           objectFit="contain"

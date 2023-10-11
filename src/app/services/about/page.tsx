@@ -10,6 +10,7 @@ const AboutMePageContainer = styled.article`
   width: 100vw;
   background-color: ${palette.BACK_DEFAULT};
   color: ${palette.LINE};
+  padding-bottom: 5%;
 
   .about__section-wrapper {
     padding-left: 10%;
