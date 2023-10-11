@@ -12,11 +12,14 @@ const ExperiencePageContainer = styled.article`
   background-color: ${palette.BACK_BLACK};
   color: ${palette.LINE_WHITE};
   overflow: hidden;
+  position: relative;
 
   .work__section-wrapper {
+    position: absolute;
     padding-left: 10%;
     width: 100%;
     display: flex;
+    z-index: 5;
 
     @media (max-width: 1024px) {
       flex-direction: column;

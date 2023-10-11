@@ -100,6 +100,7 @@ const SectionNavContainer = styled.section`
       margin-left: 0 !important;
       .section-nav__menu {
         letter-spacing: -2px !important;
+        transform: translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
       }
     }
   }
@@ -114,7 +115,7 @@ const SectionNavContainer = styled.section`
   } */
 `;
 
-const SectionNav = ({ items }: SectionNavProps) => {
+const SectionNav = ({ items, isLink = true }: SectionNavProps) => {
   useEffect(() => {
     document.querySelector('.section-nav')?.classList.remove('fade');
   }, []);
@@ -124,9 +125,15 @@ const SectionNav = ({ items }: SectionNavProps) => {
       <ul>
         {items.map((item, itemIndex) => (
           <li key={`section-navigation__${itemIndex}`}>
-            <Link href={item.href} className="section-nav__menu">
-              {item.label}
-            </Link>
+            {isLink ? (
+              <Link href={item.href} className="section-nav__menu">
+                {item.label}
+              </Link>
+            ) : (
+              <a href={item.href} className="section-nav__menu">
+                {item.label}
+              </a>
+            )}
             <p>{item.itemDesc && `${item.itemDesc} -`}</p>
           </li>
         ))}

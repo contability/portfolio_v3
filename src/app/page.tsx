@@ -47,6 +47,7 @@ const RootPage = () => {
           ]}
         />
         <SectionNav
+          isLink={false}
           items={[
             {
               label: 'experience',
