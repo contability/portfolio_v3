@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import { BsGithub } from 'react-icons/bs';
 import { SiKakaotalk } from 'react-icons/si';
+import CopyBox from '@component/CopyBox';
 
 const ContactPageContainer = styled.article`
   height: 100vh;
@@ -48,8 +49,13 @@ const ContactPageContainer = styled.article`
         flex-direction: column;
         gap: 2vw;
 
-        a {
+        .contact_section-contents__email {
           text-decoration: underline;
+          margin-bottom: 4px;
+        }
+
+        .contact_section-contents__phone {
+          white-space: nowrap;
         }
       }
 
@@ -67,6 +73,10 @@ const ContactPageContainer = styled.article`
 `;
 
 const ContactPage = () => {
+  const openEmail = () => {
+    window.location.href = `mailto:fontability@gmail.com?subject=Can I get your resume?&body=message%20goes%20here`;
+  };
+
   return (
     <ContactPageContainer>
       <div className="contact_section-wrapper">
@@ -76,12 +86,14 @@ const ContactPage = () => {
             <p>Let&apos;s work together</p>
             <div>
               <div>
-                <span>Email:</span>
-                <Link href="/">fontability@gmail.com</Link>
+                <span>Email:&nbsp;</span>
+                <button onClick={() => openEmail()} className="contact_section-contents__email">
+                  fontability@gmail.com
+                </button>
               </div>
-              <div>
-                <span>Phone:</span>
-                <span>+82 1099929822</span>
+              <div className="contact_section-contents__phone">
+                <span>Phone:&nbsp;</span>
+                <CopyBox label="+82 10-9992-9822" />
               </div>
             </div>
           </div>
