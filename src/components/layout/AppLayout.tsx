@@ -25,7 +25,7 @@ const AppLayoutContainer = styled.div<{ $isDown: boolean }>`
     }
 
     to {
-      margin-bottom: 0;
+      margin-bottom: 0%;
     }
   }
 `;

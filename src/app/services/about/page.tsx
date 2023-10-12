@@ -8,6 +8,7 @@ import Img from '@component/image/Img';
 
 const AboutMePageContainer = styled.article`
   width: 100vw;
+  min-height: 100vh;
   background-color: ${palette.BACK_DEFAULT};
   color: ${palette.LINE};
   padding-bottom: 5%;
@@ -106,11 +107,11 @@ const AboutMePage = () => {
           </div> */}
           <div className="about__section-contents__main">
             <h2 className="about__section-contents__bold">저는 프론트앤드 개발자 정신형입니다.</h2>
-            <p>
+            {/* <p>
               사용자에게 직접적으로 편안한 UI를 제공한다는 부분에 매료 되었고 CSS를 통한 사이트 디자인 구현, 백앤드와의
               협업으로 가져온 데이터를 파싱하고 가공 그리고 표현하기 위한 각종 라이브러리 등을 시도하는 것은 저에게
               즐거움입니다.
-            </p>
+            </p> */}
             <p>
               지금까지 spring-framework를 다루는 full stack 개발을 시작으로 사용자 인터페이스 작업, 비즈니스 로직 구현,
               다국어처리, 액세스 권한 제어 등 FE 스킬과 인프라 구축까지 많은 것들을 시도해 보았습니다. 크든 작든 제가
