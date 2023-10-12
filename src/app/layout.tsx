@@ -4,6 +4,7 @@ import NextTopLoader from 'nextjs-toploader';
 import Providers from '../../lib/providers';
 import './global.css';
 import { palette } from '@styles/theme';
+import NavigationBar from '@component/layout/NavigationBar';
 // import { ThemeProvider } from 'next-themes';
 
 export const metadata = {

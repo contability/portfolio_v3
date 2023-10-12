@@ -1,9 +1,12 @@
+'use client';
+
 import { palette } from '@styles/theme';
 import Link from 'next/link';
-import React from 'react';
+import { usePathname } from 'next/navigation';
+import React, { useEffect, useMemo, useState } from 'react';
 import { styled } from 'styled-components';
 
-const NavigationContainer = styled.nav`
+const NavigationContainer = styled.nav<{ $colorPalette?: ThemeProps }>`
   z-index: 50;
   width: 6%;
   height: 100vh;
@@ -14,6 +17,8 @@ const NavigationContainer = styled.nav`
   padding-bottom: 30px;
   display: flex;
   position: fixed;
+  background-color: ${({ $colorPalette }) => $colorPalette?.BACKGROUND || 'transparent'};
+  color: ${({ $colorPalette }) => $colorPalette?.LINE || 'transparent'};
 
   .branding__nav-menu {
     flex: 0 auto;
@@ -37,12 +42,13 @@ const NavigationContainer = styled.nav`
     display: flex;
     flex-direction: column;
     /* gap: 10px; */
+
     align-items: center;
 
     .branding__nav-line {
       width: 1px;
       height: 100px;
-      background-color: ${palette.LINE};
+      background-color: ${({ $colorPalette }) => $colorPalette?.LINE || 'transparent'};
       margin-top: 10px;
       margin-bottom: 80px;
     }
@@ -66,9 +72,7 @@ const NavigationContainer = styled.nav`
     width: 100%;
     height: auto;
     flex-direction: row;
-    padding-top: 2%;
-    padding-bottom: 0;
-    padding-left: 0;
+    padding: 2%;
     position: static;
 
     ul {
@@ -97,7 +101,7 @@ const NavigationContainer = styled.nav`
       .branding__nav-line {
         width: 100px;
         height: 1px;
-        background-color: ${palette.LINE};
+        background-color: ${({ $colorPalette }) => $colorPalette?.LINE || 'transparent'};
         margin: 0;
       }
     }
@@ -118,10 +122,42 @@ const NavigationContainer = styled.nav`
   }
 `;
 
-const NavigationDefault = () => {
+const NavigationBar = () => {
+  const path = usePathname().split('/');
+  const pathName = path[path.length - 1];
+  const [colorPalette, setColorPalette] = useState<ThemeProps>();
+
+  useEffect(() => {
+    if (!pathName || pathName === 'about') {
+      setColorPalette({
+        LINE: palette.LINE,
+        BACKGROUND: palette.BACK_DEFAULT,
+      });
+    } else {
+      setColorPalette({
+        LINE: palette.LINE_WHITE,
+        BACKGROUND: palette.FONT_BLACK,
+      });
+    }
+  }, [pathName]);
+
   return (
-    <NavigationContainer>
+    <NavigationContainer $colorPalette={colorPalette}>
       <ul>
+        <NavigationMenu pathName={pathName} />
+        <li className="branding__nav-line" />
+      </ul>
+      <p className="branding__nav-label">since 2020</p>
+    </NavigationContainer>
+  );
+};
+
+export default React.memo(NavigationBar);
+
+const NavigationMenu = ({ pathName }: { pathName: string }) => {
+  if (!pathName) {
+    return (
+      <>
         <li className="branding__nav-menu">
           <Link href="https://github.com/contability" target="_blank">
             GIT
@@ -132,11 +168,26 @@ const NavigationDefault = () => {
             KKO
           </Link>
         </li>
-        <li className="branding__nav-line" />
-      </ul>
-      <p className="branding__nav-label">since 2020</p>
-    </NavigationContainer>
+      </>
+    );
+  }
+
+  if (pathName === 'about' || pathName === 'contact' || pathName === 'experience') {
+    return (
+      <li className="branding__nav-menu">
+        <a href="/">HOME</a>
+      </li>
+    );
+  }
+
+  return (
+    <>
+      <li className="branding__nav-menu">
+        <a href="/">HOME</a>
+      </li>
+      <li className="branding__nav-menu">
+        <a href="/services/experience">EXP</a>
+      </li>
+    </>
   );
 };
-
-export default React.memo(NavigationDefault);
