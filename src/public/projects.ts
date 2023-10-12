@@ -107,6 +107,9 @@ export const projects: IProjects = {
       '고민과 실패가 많았던 만큼 성공했을 때의 기쁨이 기억에 강하게 남아있고 현재 개발을 하면서도 좋은 영향을 주는 기억으로 남아있습니다.',
     ],
     images: ['mov_project_4.mp4'],
+    link: {
+      url: 'https://github.com/contability/xchnge_front',
+    },
   },
   albamon: {
     id: 5,
@@ -149,5 +152,8 @@ export const projects: IProjects = {
       '무엇보다 학습 용이 아닌 실제 프로젝트를 보일러 플레이트 부터 서비스 배포까지 처음으로 완성 시켰다는 점에서 좋은 경험을 했다고 느낍니다.',
     ],
     images: ['image_projects_6_1.png', 'image_projects_6_2.png', 'image_projects_6_3.png'],
+    link: {
+      url: 'https://www.fileup.global/',
+    },
   },
 };
