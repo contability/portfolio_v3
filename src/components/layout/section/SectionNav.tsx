@@ -51,6 +51,7 @@ const SectionNavContainer = styled.section`
     letter-spacing: -10px;
     font-weight: 400;
     text-decoration: none;
+    font-style: italic;
     transition:
       transform 0.3s ease-in-out,
       color 0.3s ease-in-out,
@@ -61,7 +62,6 @@ const SectionNavContainer = styled.section`
     }
 
     &:hover {
-      font-style: italic;
       font-weight: 400;
       transform: translate(5px);
     }
