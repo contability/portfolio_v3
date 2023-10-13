@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import { BsGithub } from 'react-icons/bs';
 import { SiKakaotalk } from 'react-icons/si';
+import { RxNotionLogo } from 'react-icons/rx';
+import { SiVelog } from 'react-icons/si';
 import CopyBox from '@component/CopyBox';
 
 const ContactPageContainer = styled.article`
@@ -59,10 +61,23 @@ const ContactPageContainer = styled.article`
         }
       }
 
-      .contact_section-contents__footer {
+      .contact_section-footer {
         display: flex;
         gap: 1vw;
         margin-top: 10%;
+
+        @media (max-width: 600px) {
+          gap: 2vw;
+        }
+
+        .contact_section-footer__link {
+          display: block;
+          transition: transform 0.3s ease-in-out;
+
+          &:hover {
+            transform: translate(0, -4px);
+          }
+        }
       }
     }
   }
@@ -97,12 +112,22 @@ const ContactPage = () => {
               </div>
             </div>
           </div>
-          <div className="contact_section-contents__footer">
-            <Link href="https://github.com/contability" target="_blank">
+          <div className="contact_section-footer">
+            <Link className="contact_section-footer__link" href="https://github.com/contability" target="_blank">
               <BsGithub size={50} />
             </Link>
-            <Link href="https://open.kakao.com/o/swjepgJf" target="_blank">
+            <Link className="contact_section-footer__link" href="https://open.kakao.com/o/swjepgJf" target="_blank">
               <SiKakaotalk size={50} />
+            </Link>
+            <Link
+              className="contact_section-footer__link"
+              href="https://www.notion.so/furium/Dev-9254371bc7a84df5a25aad0bea2ad916?pvs=4"
+              target="_blank"
+            >
+              <RxNotionLogo size={50} />
+            </Link>
+            <Link className="contact_section-footer__link" href="https://velog.io/@furium" target="_blank">
+              <SiVelog size={50} />
             </Link>
           </div>
         </section>
