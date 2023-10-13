@@ -30,7 +30,6 @@ export const projects: IProjects = {
       'vanillaJs, javascript 및 다양한 라이브러리를 사용하여 동적 컨텐츠 개발',
       'easyUI 라이브러리를 활용한 UI 구현',
       '리포팅 툴을 활용한 통계 리포트 출력',
-      '해당 기술을 토대로 피자헛 상권 관리 시스템, 한국수력원자력, 강릉시 등 40여건의 SI/SM 프로젝트 수행',
       'On-premise 운영 방식 구축',
     ],
     summary:
@@ -41,7 +40,7 @@ export const projects: IProjects = {
       '저의 첫 프로젝트 경험으로서 시스템 전체의 큰 그림을 볼 수 있었고 현재 FE 업무를 해나감에 있어서 BE와 소통하는 부분 등 여러 부분에서 도움이 되어주는 경험이었습니다.',
       '직접 서버 및 데이터베이스 등 인프라를 구축하는 On-Premise 방식으로 운영하였고 프로젝트 개발 인원은 평균 2-3명으로 이었고 프로젝트 당 기여도는 50% - 100%입니다.',
       '해당 프로젝트 중 서버에서 내려받은 데이터를 파싱하고 지도와 데이터 그리드로 보여지게 하는 작업에 보다 더 큰 매력을 느꼈고',
-      '당시 사용했던 기술들을 활용해 사용자들이 필요로 하는 기능을 만들어내는 것도 물론 기뻤지만 좀 더 모던한 기술을 다루고 싶다는 욕심이 생겨 널리 사용되던 react.js를 독학하고 FE로 전향하게 된 프로젝트입니다.',
+      '당시 사용했던 기술들을 활용해 사용자들이 필요로 하는 기능을 만들어내는 것도 물론 기뻤지만 좀 더 모던한 기술을 다루고 싶다는 욕심이 생겨 널리 사용되던 react.js를 독학하고 FE로 전향하는 발판을 만들어준 프로젝트입니다.',
     ],
     images: [
       'image_projects_1_1.jpg',
@@ -258,12 +257,11 @@ export const projects: IProjects = {
       '공통 컴포넌트 작성',
       '테스트 코드 작성',
       'api data fetching',
+      'AWS Amplify / S3 활용',
     ],
     summary: '자체 발행 코인에 대하여 환전, 출금 및 패키지 상품 구매 등이 구현 된 B2C 프로젝트입니다.',
     description: [
-      '웹 서버 배포는 AWS Amplify를 통해 CI/CD 기능을 사용하였고 파일 스토리지는 AWS S3를 활용하였습니다.',
-      '버전 관리는 GIT-FLOW 전략을 사용하였고 next.js 프레임 워크에 typescript를 사용, zustand, tailwindCSS, axios, react-query, react-hook-form, zod 등의 툴을 사용하였습니다.',
-      '테스트 코드는 storybook을 활용하였습니다.',
+      'next.js 프레임 워크에 typescript를 사용, zustand, tailwindCSS, axios, react-query, react-hook-form, zod 등의 툴과 테스트 코드로는 storybook을 사용하였습니다.',
       '개발은 기획 1, 디자이너 1, BE 3, FE 2로 구성되어 진행하였으며 업무 소통을 위해 slack, jira, figma, teams 등 각종 툴을 활용하였습니다.',
       '흔히 사용되는 CSS 프레임워크 중 하나인 tailwindCSS를 실제 프로젝트에 적용한 경험은 처음이라 개인적으로는 새로웠고 새로운 것을 적용하는 것에 설레는 기분으로 시작하게 된 프로젝트입니다.',
       '초기엔 장황한 클래스 네임에 어지러웠지만 이내 설정을 끝낸 뒤엔 styled-components 보다 상대적으로 손 쉽게 css 속성을 적용시킨다는 점 등 장단점을 느낄 수 있어서 좋았습니다.',

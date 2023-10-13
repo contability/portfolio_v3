@@ -164,6 +164,10 @@ const DetailWorkPageContainer = styled.article`
     font-size: 1.5vw;
     font-weight: 300;
 
+    @media (min-width: 1700px) {
+      font-size: 25px;
+    }
+
     @media (max-width: 1024px) {
       font-size: 2vw;
     }
