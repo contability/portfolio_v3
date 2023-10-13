@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import { styled } from 'styled-components';
 import { palette } from '@styles/theme';
 import Link from 'next/link';
-import NavigationDefault from '@component/navigation/NavigationDefault';
+import NavigationBar from '@component/layout/NavigationBar';
 import SectionDesc from '@component/layout/section/SectionDesc';
 import SectionNav from '@component/layout/section/SectionNav';
 import TransitionBackground from '@component/layout/TransitionBackground';
@@ -41,7 +41,7 @@ const RootPage = () => {
       <TransitionBackground theme="dark" />
       <AppLayout isDown={true}>
         <Container>
-          <NavigationDefault />
+          <NavigationBar />
           <div className="branding__section-wrapper">
             <SectionDesc
               descriptionHeader="shinhyungjung"

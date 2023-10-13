@@ -2,9 +2,14 @@
 
 import { palette } from '@styles/theme';
 import styled from 'styled-components';
-import { projects } from '../../../../public/projects';
+import { projects, skillImageURL } from '../../../../public/projects';
 import Img from '@component/image/Img';
 import FirstMedia from '@component/services/experience/FirstMedia';
+import { TbWorldWww } from 'react-icons/tb';
+import { BsGithub } from 'react-icons/bs';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import SkillCard from '@component/services/experience/SkillCard';
 
 const DetailWorkPageContainer = styled.article`
   height: 100%;
@@ -132,6 +137,11 @@ const DetailWorkPageContainer = styled.article`
             font-weight: 500;
           }
         }
+
+        .work-detail__section-summary__information-link {
+          display: flex;
+          gap: 6px;
+        }
       }
     }
   }
@@ -176,6 +186,12 @@ const DetailWorkPageContainer = styled.article`
 
 const DetailWorkPage = ({ params }: { params: { name: string } }) => {
   const projectInfo = projects[params.name];
+  const router = useRouter();
+
+  const handleClick = (target: string) => {
+    router.push(target);
+  };
+
   return (
     <DetailWorkPageContainer className="scrollbar-hide">
       <div className="work-detail__section-wrapper">
@@ -193,13 +209,25 @@ const DetailWorkPage = ({ params }: { params: { name: string } }) => {
               <p>responsibility</p>
               <p>{projectInfo.responsibility}</p>
             </div>
-            {projectInfo.link?.url && (
+            {projectInfo.link && (
               <div className="work-detail__section-summary__information-detail">
-                <p>url</p>
-                <p>{projectInfo.link?.url || ''}</p>
+                <p>link</p>
+                <div className="work-detail__section-summary__information-link">
+                  {projectInfo.link?.url && (
+                    <Link href={projectInfo.link?.url || ''} target="_blank">
+                      <TbWorldWww size={30} />
+                    </Link>
+                  )}
+                  {projectInfo.link?.git && (
+                    <Link href={projectInfo.link?.git || ''} target="_blank">
+                      <BsGithub size={30} />
+                    </Link>
+                  )}
+                </div>
               </div>
             )}
           </div>
+          <SkillCard skills={projectInfo.skills} />
         </section>
         <section key="work-detail__section-description" className="work-detail__section-description">
           <FirstMedia projectInfo={projectInfo} />

@@ -11,3 +11,5 @@
 ## [Page Structure](./docs/page-structure.md)
 
 ## [How to run](https://www.notion.so/furium/bae31ce8626c47279cce83823e141898?pvs=4)
+
+## [JIRA](https://furium.atlassian.net/jira/software/projects/FRONTEND/boards/1)

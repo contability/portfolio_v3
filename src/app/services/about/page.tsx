@@ -1,13 +1,14 @@
 'use client';
 
-import Card from '@component/layout/Card';
 import { palette } from '@styles/theme';
 import styled from 'styled-components';
-import { aboutMe } from '../../../public/about';
 import Img from '@component/image/Img';
+import Link from 'next/link';
+import { RxNotionLogo } from 'react-icons/rx';
 
 const AboutMePageContainer = styled.article`
   width: 100vw;
+  min-height: 100vh;
   background-color: ${palette.BACK_DEFAULT};
   color: ${palette.LINE};
   padding-bottom: 5%;
@@ -55,6 +56,10 @@ const AboutMePageContainer = styled.article`
           font-size: 26px;
           font-weight: 600;
         }
+      }
+
+      .about__section-contents__footer {
+        float: right;
       }
     }
 
@@ -106,11 +111,11 @@ const AboutMePage = () => {
           </div> */}
           <div className="about__section-contents__main">
             <h2 className="about__section-contents__bold">저는 프론트앤드 개발자 정신형입니다.</h2>
-            <p>
+            {/* <p>
               사용자에게 직접적으로 편안한 UI를 제공한다는 부분에 매료 되었고 CSS를 통한 사이트 디자인 구현, 백앤드와의
               협업으로 가져온 데이터를 파싱하고 가공 그리고 표현하기 위한 각종 라이브러리 등을 시도하는 것은 저에게
               즐거움입니다.
-            </p>
+            </p> */}
             <p>
               지금까지 spring-framework를 다루는 full stack 개발을 시작으로 사용자 인터페이스 작업, 비즈니스 로직 구현,
               다국어처리, 액세스 권한 제어 등 FE 스킬과 인프라 구축까지 많은 것들을 시도해 보았습니다. 크든 작든 제가
@@ -147,6 +152,11 @@ const AboutMePage = () => {
               실행 방법과 컨벤션을 포함합니다.
             </div>
           </div>
+          <footer className="about__section-contents__footer">
+            <Link href="https://www.notion.so/furium/Dev-9254371bc7a84df5a25aad0bea2ad916?pvs=4" target="_blank">
+              <RxNotionLogo size={50} />
+            </Link>
+          </footer>
         </section>
       </div>
     </AboutMePageContainer>

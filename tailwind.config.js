@@ -29,6 +29,17 @@ module.exports = {
         // 'danger-red': '#F1416C',
         // 'danger-l-red': '#FDE7E9',
         // 'point-red': '#ef454a',
+        LINE: '#BB5133',
+        LINE_WHITE: '#FFFFFF',
+        LINE_BTN: '#D9D9D9',
+
+        // background-color
+        BACK_DEFAULT: '#F4EFE7',
+        BACK_BLACK: '#000000',
+        // BACK_DEFAULT: '#ece7e1',
+
+        FONT_BLACK: '#000000',
+        FONT_WHITE: '#FFFFFF',
       },
       fontSize: {
         'display-large': [
@@ -210,6 +221,8 @@ module.exports = {
         'transition-right': 'transition-right 0.4s cubic-bezier(0.2, 0.0, 0, 1.0) 1',
         'transition-top': 'transition-top 0.2s cubic-bezier(0.2, 0.0, 0, 1.0) 1',
         'transition-top-lazy': 'transition-top 4s cubic-bezier(0.2, 0.0, 0, 1.0) 1',
+        expansion: 'expansion 0.5s 1 forwards',
+        reduction: 'reduction 0.5s 1 forwards',
       },
 
       keyframes: {
@@ -341,6 +354,22 @@ module.exports = {
           },
           '100%': {
             transform: 'translateX(0%) translateY(0%)',
+          },
+        },
+        expansion: {
+          from: {
+            padding: '0 8px',
+          },
+          to: {
+            padding: '0 50px',
+          },
+        },
+        reduction: {
+          from: {
+            padding: '0 50px',
+          },
+          to: {
+            padding: '0 8px',
           },
         },
       },

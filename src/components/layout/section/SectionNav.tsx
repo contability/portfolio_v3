@@ -49,21 +49,21 @@ const SectionNavContainer = styled.section`
     display: block;
     position: relative;
     letter-spacing: -10px;
-    font-style: italic;
     font-weight: 400;
     text-decoration: none;
-    transform: translate(5px);
+    font-style: italic;
+    transition:
+      transform 0.3s ease-in-out,
+      color 0.3s ease-in-out,
+      font-size 0.3s ease-in-out;
 
     @media (max-width: 1024px) {
       font-size: 13vw;
     }
 
     &:hover {
-      font-style: italic;
-      -webkit-transform: skewX(-7deg);
-      -moz-transform: skewX(-7deg);
-      -o-transform: skewX(-7deg);
-      transform: skewX(-7deg);
+      font-weight: 400;
+      transform: translate(5px);
     }
   }
 
