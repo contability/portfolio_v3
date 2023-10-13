@@ -93,7 +93,7 @@ const ContactPage = () => {
               </div>
               <div className="contact_section-contents__phone">
                 <span>Phone:&nbsp;</span>
-                <CopyBox label="+82 10-9992-9822" />
+                <CopyBox contents="+82 10-9992-9822" />
               </div>
             </div>
           </div>
