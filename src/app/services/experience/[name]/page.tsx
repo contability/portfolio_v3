@@ -99,9 +99,13 @@ const DetailWorkPageContainer = styled.article`
       max-width: 50%;
       margin-left: auto;
       margin-right: auto;
-      font-size: 3vw;
+      font-size: 2.2vw;
       font-weight: 300;
       line-height: 1.3em;
+
+      @media (min-width: 1700px) {
+        font-size: 38px;
+      }
 
       @media (max-width: 750px) {
         font-size: 4.5vw;
@@ -136,6 +140,10 @@ const DetailWorkPageContainer = styled.article`
             margin-bottom: 16px;
             font-weight: 500;
           }
+        }
+
+        .responsibiility-contents {
+          margin-bottom: 2px;
         }
 
         .work-detail__section-summary__information-link {
@@ -207,7 +215,14 @@ const DetailWorkPage = ({ params }: { params: { name: string } }) => {
             </div>
             <div className="work-detail__section-summary__information-detail">
               <p>responsibility</p>
-              <p>{projectInfo.responsibility}</p>
+              {projectInfo.responsibility?.map((item, index) => (
+                <p
+                  key={`work-detail__section-summary__information-detail__${index}`}
+                  className="responsibiility-contents"
+                >
+                  {item}
+                </p>
+              ))}
             </div>
             {projectInfo.link && (
               <div className="work-detail__section-summary__information-detail">
