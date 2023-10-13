@@ -3,6 +3,8 @@
 import { palette } from '@styles/theme';
 import styled from 'styled-components';
 import Img from '@component/image/Img';
+import Link from 'next/link';
+import { RxNotionLogo } from 'react-icons/rx';
 
 const AboutMePageContainer = styled.article`
   width: 100vw;
@@ -54,6 +56,10 @@ const AboutMePageContainer = styled.article`
           font-size: 26px;
           font-weight: 600;
         }
+      }
+
+      .about__section-contents__footer {
+        float: right;
       }
     }
 
@@ -146,6 +152,11 @@ const AboutMePage = () => {
               실행 방법과 컨벤션을 포함합니다.
             </div>
           </div>
+          <footer className="about__section-contents__footer">
+            <Link href="https://www.notion.so/furium/Dev-9254371bc7a84df5a25aad0bea2ad916?pvs=4" target="_blank">
+              <RxNotionLogo size={50} />
+            </Link>
+          </footer>
         </section>
       </div>
     </AboutMePageContainer>
