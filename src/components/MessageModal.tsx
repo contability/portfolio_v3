@@ -11,6 +11,34 @@ interface MessageModalProps {
   onClose: () => void;
 }
 
+const MessagePopupBox = styled.div<{ $isVisible: boolean }>`
+  transform: translate(-50%, -50%);
+  left: 50%;
+  bottom: 100px;
+  position: fixed;
+
+  ${({ $isVisible }) => {
+    if (!$isVisible) {
+      return 'visibility: hidden; opacity: 0; transition: visibility 1s, opacity 0.5s linear;';
+    }
+    return ' visibility: visible; opacity: 1; transition: visibility 0s, opacity 0.5s linear; ';
+  }}
+
+  .timeBox {
+    text-align: center;
+  }
+
+  .messageBox {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 20px;
+    padding: 8px 32px;
+    margin-top: 8px;
+    height: inherit;
+    text-align: center;
+  }
+`;
+
 const MessageModal = ({ onClose, isVisible }: MessageModalProps) => {
   dayjs.extend(utc);
   dayjs.extend(timezone);
@@ -35,7 +63,7 @@ const MessageModal = ({ onClose, isVisible }: MessageModalProps) => {
       getCurrentTime()
         .then(res => {
           try {
-            setCurrentTime(dayjs(res.datetime).format('YYYY-MM-DD hh:mm:ss'));
+            setCurrentTime(dayjs(res.datetime).format('YYYY-MM-DD HH:mm:ss'));
           } catch (error) {
             console.error(error);
           }
@@ -53,31 +81,11 @@ const MessageModal = ({ onClose, isVisible }: MessageModalProps) => {
   return (
     <>
       <MessagePopupBox $isVisible={isVisible}>
+        {/* <p className="timeBox">{currentTime}</p> */}
         <p className={`messageBox`}>Copied Success to ClipBoard.</p>
-        <p>{currentTime}</p>
       </MessagePopupBox>
     </>
   );
 };
-
-const MessagePopupBox = styled.div<{ $isVisible: boolean }>`
-  padding: 8px 32px;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  bottom: 100px;
-  position: fixed;
-
-  ${({ $isVisible }) => {
-    if (!$isVisible) {
-      return 'visibility: hidden; opacity: 0; transition: visibility 1s, opacity 0.5s linear;';
-    }
-    return 'background-color: #ffffff; color: #000000; visibility: visible; opacity: 1; transition:   visibility 0s,   opacity 0.5s linear; border-radius: 20px;';
-  }}
-
-  .messageBox {
-    height: inherit;
-    text-align: center;
-  }
-`;
 
 export default React.memo(MessageModal);
