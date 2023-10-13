@@ -42,10 +42,6 @@ const SectionNavContainer = styled.section`
     font-weight: 300;
     line-height: 0.95em;
     text-decoration: none;
-    transition:
-      transform 0.6s ease-in-out,
-      color 0.3s ease-in-out,
-      font-size 0.3s ease-in-out;
     display: block;
     position: relative;
     letter-spacing: -10px;
