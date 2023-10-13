@@ -10,12 +10,17 @@ const nextConfig = {
   reactStrictMode: process.env.NODE_ENV === 'production' ? false : true,
   swcMinify: true,
   images: {
-    domains: ['https://furiums-portfolio.s3.us-west-1.amazonaws.com'],
+    domains: ['https://furiums-portfolio.s3.us-west-1.amazonaws.com', 'cdn.jumpit.co.kr'],
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'furiums-portfolio.s3.us-west-1.amazonaws.com',
         pathname: '/v3/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.jumpit.co.kr',
+        pathname: '/images/stacks/**',
       },
     ],
   },

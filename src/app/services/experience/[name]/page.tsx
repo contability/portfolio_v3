@@ -2,13 +2,14 @@
 
 import { palette } from '@styles/theme';
 import styled from 'styled-components';
-import { projects } from '../../../../public/projects';
+import { projects, skillImageURL } from '../../../../public/projects';
 import Img from '@component/image/Img';
 import FirstMedia from '@component/services/experience/FirstMedia';
 import { TbWorldWww } from 'react-icons/tb';
 import { BsGithub } from 'react-icons/bs';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import SkillCard from '@component/services/experience/SkillCard';
 
 const DetailWorkPageContainer = styled.article`
   height: 100%;
@@ -226,6 +227,7 @@ const DetailWorkPage = ({ params }: { params: { name: string } }) => {
               </div>
             )}
           </div>
+          <SkillCard skills={projectInfo.skills} />
         </section>
         <section key="work-detail__section-description" className="work-detail__section-description">
           <FirstMedia projectInfo={projectInfo} />

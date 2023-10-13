@@ -9,13 +9,13 @@ interface IProjects {
     summary: string;
     description: string[];
     images?: string[];
+    skills?: string[];
     link?: {
       url?: string;
       git?: string;
     };
   };
 }
-
 export const projects: IProjects = {
   kworks: {
     id: 1,
@@ -34,7 +34,7 @@ export const projects: IProjects = {
       '직접 서버 및 데이터베이스 등 인프라를 구축하는 On-Premise 방식으로 운영하였고 프로젝트 개발 인원은 평균 2-3명으로 이루어졌습니다. ',
       '저의 첫 프로젝트 경험으로서 시스템 전체의 큰 그림을 볼 수 있었고 현재 FE 업무를 해나감에 있어서 BE와 소통하는 부분 등 여러 부분에서 도움이 되는 경험이었습니다.',
       '해당 프로젝트 중 서버에서 내려받은 데이터를 파싱하고 지도와 데이터 그리드로 보여지게 하는 작업에 더 큰 매력을 느꼈고',
-      '당시 사용했던 기술들을 활용해 사용자들이 필요로 하는 기능을 만들어내는 것도 물론 기뻤지만 좀 더 모던한 기술을 다루고 싶다는 욕심이 생겨 널리 사용되던 react.js를 독학하고 FE로 전향하게 되었습니다.',
+      '당시 사용했던 기술들을 활용해 사용자들이 필요로 하는 기능을 만들어내는 것도 물론 기뻤지만 좀 더 모던한 기술을 다루고 싶다는 욕심이 생겨 널리 사용되던 react.js를 독학하고 FE로 전향하게 된 프로젝트입니다.',
     ],
     images: [
       'image_projects_1_1.jpg',
@@ -46,6 +46,21 @@ export const projects: IProjects = {
     link: {
       git: 'https://github.com/contability/gis_project',
     },
+    skills: [
+      'java',
+      'spring framework',
+      'javascript',
+      'vanillaJs',
+      'jQuery',
+      'oracle',
+      'msSQL',
+      'postgreSQL',
+      'mySQL',
+      'easy UI',
+      'openLayers',
+      'tomcat',
+      'SVN',
+    ],
   },
   defi: {
     id: 2,
@@ -67,6 +82,21 @@ export const projects: IProjects = {
     link: {
       git: 'https://github.com/contability/defi_front',
     },
+    skills: [
+      'javascript',
+      'react',
+      'redux',
+      'nodeJs',
+      'mySQL',
+      'axios',
+      'material UI',
+      'styled-components',
+      'solidity',
+      'Blockchain',
+      'web3',
+      'amazon EC2',
+      'git',
+    ],
   },
   nftMarket: {
     id: 3,
@@ -88,6 +118,20 @@ export const projects: IProjects = {
     link: {
       url: 'https://limited.collexx.io/about',
     },
+    skills: [
+      'javascript',
+      'react',
+      'redux',
+      'mySQL',
+      'axios',
+      'material UI',
+      'styled-components',
+      'amazon EC2',
+      'amazon S3',
+      'Blockchain',
+      'web3',
+      'git',
+    ],
   },
   exchange: {
     id: 4,
@@ -110,6 +154,20 @@ export const projects: IProjects = {
     link: {
       url: 'https://github.com/contability/xchnge_front',
     },
+
+    skills: [
+      'javascript',
+      'react',
+      'redux',
+      'styled-components',
+      'nodeJs',
+      'mySQL',
+      'axios',
+      'Blockchain',
+      'web3',
+      'amazon EC2',
+      'git',
+    ],
   },
   albamon: {
     id: 5,
@@ -131,6 +189,27 @@ export const projects: IProjects = {
     link: {
       url: 'https://m.albamon.com/',
     },
+    skills: [
+      'TypeScript',
+      'Next.js',
+      'Zustand',
+      'React Query',
+      'SCSS',
+      'axios',
+      'React Hook Form',
+      'yup',
+      'Lodash',
+      'ESLint',
+      'Prettier',
+      'Storybook',
+      'Jest',
+      'Git Flow',
+      'Git Hook',
+      'Confluence',
+      'Jira',
+      'Slack',
+      'Figma',
+    ],
   },
   fileup: {
     id: 6,
@@ -155,5 +234,67 @@ export const projects: IProjects = {
     link: {
       url: 'https://www.fileup.global/',
     },
+    skills: [
+      'TypeScript',
+      'Next.js',
+      'TailwindCSS',
+      'Zustand',
+      'React Query',
+      'axios',
+      'React Hook Form',
+      'zod',
+      'Lodash',
+      'JSON Web Token',
+      'ESLint',
+      'Prettier',
+      'Storybook',
+      'Jest',
+      'Git Flow',
+      'Git Hook',
+      'Confluence',
+      'Jira',
+      'Slack',
+      'Figma',
+      'amazon S3',
+      'AWS Amplify',
+    ],
   },
+};
+
+export const skillImageURL: Record<string, string> = {
+  javascript: 'https://cdn.jumpit.co.kr/images/stacks/javascript.png',
+  TypeScript: 'https://cdn.jumpit.co.kr/images/stacks/typescript.png',
+  jQuery: 'https://cdn.jumpit.co.kr/images/stacks/jquery.png',
+  'jQuery UI': 'https://cdn.jumpit.co.kr/images/stacks/jqueryui.png',
+  java: 'https://cdn.jumpit.co.kr/images/stacks/java.png',
+  postgreSQL: 'https://cdn.jumpit.co.kr/images/stacks/postgresql.png',
+  msSQL: 'https://cdn.jumpit.co.kr/images/stacks/mssql.png',
+  oracle: 'https://cdn.jumpit.co.kr/images/stacks/oracle.png',
+  mySQL: 'https://cdn.jumpit.co.kr/images/stacks/mysql.png',
+  'spring framework': 'https://cdn.jumpit.co.kr/images/stacks/springframework.png',
+  react: 'https://cdn.jumpit.co.kr/images/stacks/react.png',
+  'Next.js': 'https://cdn.jumpit.co.kr/images/stacks/next.js.png',
+  'React Query': 'https://cdn.jumpit.co.kr/images/stacks/ReactQuery.png',
+  'Git Flow': 'https://cdn.jumpit.co.kr/images/stacks/GitFlow.png',
+  Jira: 'https://cdn.jumpit.co.kr/images/stacks/jira.png',
+  Figma: 'https://cdn.jumpit.co.kr/images/stacks/figma.png',
+  Zustand: 'https://cdn.jumpit.co.kr/images/stacks/Zustand.png',
+  redux: 'https://cdn.jumpit.co.kr/images/stacks/redux.png',
+  nodeJs: 'https://cdn.jumpit.co.kr/images/stacks/node.js.png',
+  'material UI': 'https://cdn.jumpit.co.kr/images/stacks/material-ui.png',
+  git: 'https://cdn.jumpit.co.kr/images/stacks/git.png',
+  'amazon EC2': 'https://cdn.jumpit.co.kr/images/stacks/amazonec2.png',
+  'amazon S3': 'https://cdn.jumpit.co.kr/images/stacks/amazons3.png',
+  tomcat: 'https://cdn.jumpit.co.kr/images/stacks/apachetomcat.png',
+  Blockchain: 'https://cdn.jumpit.co.kr/images/stacks/Blockchain.png',
+  Slack: 'https://cdn.jumpit.co.kr/images/stacks/slack.png',
+  Confluence: 'https://cdn.jumpit.co.kr/images/stacks/confluence.png',
+  Lodash: 'https://cdn.jumpit.co.kr/images/stacks/lodash.png',
+  axios: 'https://cdn.jumpit.co.kr/images/stacks/axios.png',
+  Storybook: 'https://cdn.jumpit.co.kr/images/stacks/storybook.png',
+  Jest: 'https://cdn.jumpit.co.kr/images/stacks/jest.png',
+  ESLint: 'https://cdn.jumpit.co.kr/images/stacks/eslint.png',
+  'AWS Amplify': 'https://cdn.jumpit.co.kr/images/stacks/AWSAmplify.png',
+  'JSON Web Token': 'https://cdn.jumpit.co.kr/images/stacks/jsonwebtoken.png',
+  TailwindCSS: 'https://cdn.jumpit.co.kr/images/stacks/tailwindcss.png',
 };
