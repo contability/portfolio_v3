@@ -224,7 +224,7 @@ const DetailWorkPage = ({ params }: { params: { name: string } }) => {
                   key={`work-detail__section-summary__information-detail__${index}`}
                   className="responsibiility-contents"
                 >
-                  {item}
+                  - {item}
                 </p>
               ))}
             </div>
