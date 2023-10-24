@@ -142,7 +142,12 @@ const DetailWorkPageContainer = styled.article`
           }
         }
 
+        ul {
+          padding-left: 15px;
+        }
+
         .responsibiility-contents {
+          list-style-type: circle;
           margin-bottom: 2px;
         }
 
@@ -163,6 +168,10 @@ const DetailWorkPageContainer = styled.article`
     padding-right: 5%;
     font-size: 1.5vw;
     font-weight: 300;
+
+    @media (min-width: 1700px) {
+      font-size: 25px;
+    }
 
     @media (max-width: 1024px) {
       font-size: 2vw;
@@ -215,14 +224,16 @@ const DetailWorkPage = ({ params }: { params: { name: string } }) => {
             </div>
             <div className="work-detail__section-summary__information-detail">
               <p>responsibility</p>
-              {projectInfo.responsibility?.map((item, index) => (
-                <p
-                  key={`work-detail__section-summary__information-detail__${index}`}
-                  className="responsibiility-contents"
-                >
-                  {item}
-                </p>
-              ))}
+              <ul>
+                {projectInfo.responsibility?.map((item, index) => (
+                  <li
+                    key={`work-detail__section-summary__information-detail__${index}`}
+                    className="responsibiility-contents"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
             {projectInfo.link && (
               <div className="work-detail__section-summary__information-detail">
