@@ -127,21 +127,7 @@ const AboutMePage = () => {
               저는 그저 예쁜 것을 만들기 위해 일하고 싶지는 않습니다. 진정성 있고 의미 있고 세상에 영향을 미칠 수 있는
               아이디어를 만들고 구현하고 싶습니다.
             </p>
-            <div>
-              <h3 className="about__section-contents__bold mb-[20px]">경험</h3>
-              <ul>
-                <li>- vanilla.js & jQuery 2년</li>
-                <li>- react.js & next.js 1년</li>
-                <li>- typescript 1년</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="about__section-contents__bold mb-[20px]">스킬</h3>
-              <p>
-                UI/UX 구현 / git-flow / 애자일 방법론 / 협업 / HTML 및 CSS / 액세스 제어 / 인프라 구축 / 테스트 코드 /
-                SSR / ...
-              </p>
-            </div>
+
             <div>
               이 포트폴리오에 대한 상세는 github 레포지토리에서 확인 가능하며 전반적인 내용과 git flow, 페이지 구조,
               실행 방법과 컨벤션을 포함합니다.
