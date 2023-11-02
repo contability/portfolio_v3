@@ -287,7 +287,7 @@ export const projects: IProjects = {
   },
   albamon: {
     id: 5,
-    title: 'albamon Web Mobile Migration Project',
+    title: 'Albamon Web Mobile Migration Project',
     start: '2022-09',
     end: '2022-10',
     role: 'front-end development',
@@ -347,7 +347,7 @@ export const projects: IProjects = {
   },
   fileup: {
     id: 6,
-    title: 'fileup',
+    title: 'Blockchain Network',
     start: '2023-07',
     end: '2023-09',
     role: 'front-end development',
