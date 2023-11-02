@@ -4,6 +4,8 @@ import { palette } from '@styles/theme';
 import styled from 'styled-components';
 import Img from '@component/image/Img';
 import Link from 'next/link';
+import Card from '@component/layout/Card';
+import { aboutMe } from '../../../public/about';
 
 const AboutMePageContainer = styled.article`
   width: 100vw;
@@ -91,7 +93,8 @@ const AboutMePage = () => {
           <Img
             src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/image_furium.jpg`}
             width={'100%'}
-            objectFit="contain"
+            height={'50%'}
+            // objectFit="contain"
             aspect={'16/9'}
           />
         </figure>
@@ -99,11 +102,7 @@ const AboutMePage = () => {
           <header className="about__section-contents__header">
             <h2>About Me</h2>
           </header>
-          {/* <div className="about__section-contents__main">
-            {aboutMe.map((item, itemIndex) => (
-              <Card key={`introduce-${itemIndex}`} title={item.title} content={item.content} />
-            ))}
-          </div> */}
+
           <div className="about__section-contents__main">
             <h2 className="about__section-contents__bold">저는 프론트앤드 개발자 정신형입니다.</h2>
             {/* <p>
@@ -113,7 +112,7 @@ const AboutMePage = () => {
             </p> */}
             <p>
               지금까지 spring-framework를 다루는 full stack 개발을 시작으로 사용자 인터페이스 작업, 비즈니스 로직 구현,
-              다국어처리, 액세스 권한 제어 등 FE 스킬과 인프라 구축까지 많은 것들을 시도해 보았습니다. 크든 작든 제가
+              다국어처리, 액세스 권한 제어 등 FE 스킬과 인프라 구축까지 많은 것들을 시도해 보았습니다. 크던 작던 제가
               해왔던 일들은 모두 지금의 저를 있게 한 중요한 경험들입니다.
             </p>
             <p>
@@ -127,6 +126,12 @@ const AboutMePage = () => {
               저는 그저 예쁜 것을 만들기 위해 일하고 싶지는 않습니다. 진정성 있고 의미 있고 세상에 영향을 미칠 수 있는
               아이디어를 만들고 구현하고 싶습니다.
             </p>
+
+            <div className="about__section-contents__main">
+              {aboutMe.map((item, itemIndex) => (
+                <Card key={`introduce-${itemIndex}`} title={item.title} content={item.content} />
+              ))}
+            </div>
 
             <div>
               이 포트폴리오에 대한 상세는 github 레포지토리에서 확인 가능하며 전반적인 내용과 git flow, 페이지 구조,

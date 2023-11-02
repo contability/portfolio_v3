@@ -189,11 +189,26 @@ const DetailWorkPageContainer = styled.article`
       max-width: 85%;
       margin-left: auto;
       margin-right: auto;
+      padding-left: 5%;
+
+      li {
+        margin-bottom: 2%;
+        list-style-type: disc;
+      }
     }
 
     .work-detail__section-description__image {
       padding: 5% 0;
     }
+  }
+
+  h5 {
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
   }
 
   @media (max-width: 600px) {
@@ -257,15 +272,18 @@ const DetailWorkPage = ({ params }: { params: { name: string } }) => {
         </section>
         <section key="work-detail__section-description" className="work-detail__section-description">
           <FirstMedia projectInfo={projectInfo} />
-          {projectInfo.description.map((desc, descIndex) => {
-            return descIndex < 3 ? (
-              <p key={`project-description__${descIndex}`} className="work-detail__section-description__detail">
-                {desc}
-              </p>
-            ) : (
-              <></>
-            );
-          })}
+          <h5>[주요 업무]</h5>
+          <ul className="work-detail__section-description__detail">
+            {projectInfo.major.map((item, itemIndex) => {
+              return itemIndex < 3 ? (
+                <li key={`project-description__${itemIndex}`}>
+                  <p>{item}</p>
+                </li>
+              ) : (
+                <></>
+              );
+            })}
+          </ul>
           {projectInfo.images?.map((image, imageIndex) => {
             return imageIndex === 1 ? (
               <figure key={`project-image__${imageIndex}`} className="work-detail__section-description__image">
@@ -280,15 +298,18 @@ const DetailWorkPage = ({ params }: { params: { name: string } }) => {
               <></>
             );
           })}
-          {projectInfo.description.map((desc, descIndex) => {
-            return descIndex > 2 && descIndex < 6 ? (
-              <p key={`project-description__${descIndex}`} className="work-detail__section-description__detail">
-                {desc}
-              </p>
-            ) : (
-              <></>
-            );
-          })}
+          <h5>[성과]</h5>
+          <ul className="work-detail__section-description__detail">
+            {projectInfo.result.map((item, itemIndex) => {
+              return itemIndex < 3 ? (
+                <li key={`project-description__${itemIndex}`}>
+                  <p>{item}</p>
+                </li>
+              ) : (
+                <></>
+              );
+            })}
+          </ul>
           {projectInfo.images?.map((image, imageIndex) => {
             return imageIndex === 2 ? (
               <div key={`project-image__${imageIndex}`} className="work-detail__section-description__image">
@@ -303,15 +324,18 @@ const DetailWorkPage = ({ params }: { params: { name: string } }) => {
               <></>
             );
           })}
-          {projectInfo.description.map((desc, descIndex) => {
-            return descIndex > 5 ? (
-              <p key={`project-description__${descIndex}`} className="work-detail__section-description__detail">
-                {desc}
-              </p>
-            ) : (
-              <></>
-            );
-          })}
+          <h5>[ 교훈 ]</h5>
+          <ul className="work-detail__section-description__detail">
+            {projectInfo.precept?.map((item, itemIndex) => {
+              return itemIndex < 3 ? (
+                <li key={`project-description__${itemIndex}`}>
+                  <p>{item}</p>
+                </li>
+              ) : (
+                <></>
+              );
+            })}
+          </ul>
           {projectInfo.images?.map((image, imageIndex) => {
             return imageIndex > 2 ? (
               <figure key={`project-image__${imageIndex}`} className="work-detail__section-description__image">
