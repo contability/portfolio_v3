@@ -13,6 +13,7 @@ const AboutMePageContainer = styled.article`
   background-color: ${palette.BACK_DEFAULT};
   color: ${palette.LINE};
   padding-bottom: 5%;
+  overflow-x: hidden;
 
   .about__section-wrapper {
     padding-left: 10%;
@@ -63,19 +64,19 @@ const AboutMePageContainer = styled.article`
     .about__section-contents__profile {
       position: absolute;
       width: 50%;
-      top: 15%;
-      right: 5%;
+      top: 12%;
+      right: -9%;
 
       @media (max-width: 1024px) {
         width: 75%;
         top: 3%;
-        right: 0;
+        right: -24%;
       }
 
       @media (max-width: 600px) {
         width: 100%;
-        top: 5%;
-        right: -15%;
+        top: 3%;
+        right: -42%;
       }
     }
   }
@@ -91,11 +92,12 @@ const AboutMePage = () => {
       <div className="about__section-wrapper">
         <figure className="about__section-contents__profile">
           <Img
+            className="about__section-contents__profile"
             src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/image_furium.jpg`}
-            width={'100%'}
+            width={'50%'}
             height={'100%'}
             objectFit="contain"
-            aspect={'16/9'}
+            aspect={'9/11.2'}
           />
         </figure>
         <section className="about__section-contents">
