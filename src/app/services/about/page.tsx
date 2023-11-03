@@ -93,8 +93,8 @@ const AboutMePage = () => {
           <Img
             src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/images/image_furium.jpg`}
             width={'100%'}
-            height={'50%'}
-            // objectFit="contain"
+            height={'100%'}
+            objectFit="contain"
             aspect={'16/9'}
           />
         </figure>
@@ -133,10 +133,10 @@ const AboutMePage = () => {
               ))}
             </div>
 
-            <div>
+            {/* <div>
               이 포트폴리오에 대한 상세는 github 레포지토리에서 확인 가능하며 전반적인 내용과 git flow, 페이지 구조,
               실행 방법과 컨벤션을 포함합니다.
-            </div>
+            </div> */}
           </div>
         </section>
       </div>
