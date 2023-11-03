@@ -324,7 +324,7 @@ const DetailWorkPage = ({ params }: { params: { name: string } }) => {
               <></>
             );
           })}
-          <h5>[ 교훈 ]</h5>
+          <h5>[ 발전과 성장 ]</h5>
           <ul className="work-detail__section-description__detail">
             {projectInfo.precept?.map((item, itemIndex) => {
               return itemIndex < 3 ? (
