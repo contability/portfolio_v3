@@ -77,7 +77,7 @@ export const projects: IProjects = {
       '리포팅 툴을 활용한 통계 리포트 출력',
       'SVN을 이용한 버전 관리',
       'On-premise 운영 방식 구축',
-      '개발 인원 평균 3명',
+      '개발 인원 평균 3명(기여도 60% 이상)',
     ],
     summary:
       '이 프로젝트는 지방자치단체 및 공공 기관에서 유의미한 공간 정보를 효율적으로 관리하고 활용하기 위한 목적으로 추진되었고 주요 목표는 비용 절감과 업무 효율성 향상을 실현하는 것에 있었습니다.',
@@ -139,7 +139,7 @@ export const projects: IProjects = {
       '기여도 55%',
     ],
     summary:
-      'ERC20 표준 확장 암호 화폐를 예치하여 상품 플랜에 따라 책정된 보상을 사용자에게 제공하는 B2C 서비스를 구축하는 것을 목표로 하였습니다. 이를 통해 사용자들에게 보상을 제공하는 서비스입니다.',
+      'ERC20 표준 확장 암호 화폐를 예치하여 상품 플랜에 따라 책정된 보상을 사용자에게 제공하는 B2C 서비스를 구축하는 것을 목표로 하였습니다.',
     major: [
       'React를 사용하여 동적인 사용자 인터페이스 및 상호작용 가능한 컴포넌트를 개발하였습니다.',
       'Material-UI를 활용하여 사용자 친화적이고 일관된 UI 디자인을 구현하여 사용자들의 경험을 향상시켰습니다.',
@@ -151,9 +151,9 @@ export const projects: IProjects = {
     ],
     precept: [
       'FE로 전향한 후 처음 진행하게 된 프로젝트이며 서비스 배포가 아닌 구현까지의 역할을 수행했습니다.',
+      '블록체인과의 상호작용을 통해 사용자들이 편리하게 서비스를 이용할 수 있는 기능을 구현하는 경험을 할 수 있었습니다.',
       '홀로 습득한 지식으로 실제 프로젝트에 적용하며 많은 부분에서 부족함을 느꼈고 퇴근 후에 공부를 하거나 검색 혹은 커뮤니티를 활용하여 풀리지 않던 부분을 해결 하는 등의 노력으로 구현해나가고 성공적으로 완료하게 된 경험이 지금도 지식을 습득하는데 있어서 자신감을 갖는 좋은 영향이 되고 있습니다.',
       '또한, 이 프로젝트를 통해 사용자 중심의 프로덕트 디자인의 중요성을 깨닫게 되었습니다.',
-      '블록체인과의 상호작용을 통해 사용자들이 편리하게 서비스를 이용할 수 있는 기능을 구현하는 경험을 했습니다.',
     ],
     images: ['image_projects_2_1.png', 'image_projects_2_2.png', 'image_projects_2_3.png'],
     link: {
@@ -185,7 +185,6 @@ export const projects: IProjects = {
       'Web Publishing',
       'React 개발',
       'Redux, Styled-components, MaterialUI, Axios를 사용한 개발',
-      'AWS S3 data access',
       'RESTful API',
       'Web3.js를 활용한 블록체인과의 상호작용 구현',
       'AWS EC2 및 S3를 활용한 서버 관리',
@@ -292,6 +291,7 @@ export const projects: IProjects = {
     end: '2022-10',
     role: 'front-end development',
     responsibility: [
+      '반응형 Web Publishing',
       'Next.js 프레임워크와 TypeScript, SCSS를 활용한 프론트엔드 개발',
       'Zustand와 Axios를 활용한 상태 관리 및 데이터 처리',
       'React-Query를 활용한 데이터 캐싱 및 최적화',
@@ -304,7 +304,7 @@ export const projects: IProjects = {
       '기존에 존재하던 동일 서비스를 보다 현대적이고 뛰어난 성능을 제공하는 Next.js로 마이그레이션하는 프로젝트입니다. 이 프로젝트는 사용자들이 향상된 속도와 효율성을 경험할 수 있도록 기존 서비스를 Next.js 플랫폼으로 옮기는 작업을 목표로 하였습니다.',
     major: [
       '프로젝트 도중 중간 투입 되어 공고 보기, 공고 수정, 브랜딩 페이지 등 총 4개의 Task를 담당하였습니다.',
-      'Next.js 프레임워크를 활용하여 페이지 라우터를 개발하고, 재사용 할 수 있는 공통 컴포넌트와 리액트 훅을 구현하였습니다.',
+      'Next.js 프레임워크를 활용하여 페이지 라우터를 개발하고, 재사용 할 수 있는 공통 컴포넌트와 custom hook을 구현하였습니다.',
       'Git-flow 전략을 활용하여 프로젝트의 구성원들과 협업하여 프로젝트를 진행하였습니다.',
       'Jest를 활용한 테스트 코드 작성에 참여하였습니다.',
     ],
@@ -352,8 +352,12 @@ export const projects: IProjects = {
     end: '2023-09',
     role: 'front-end development',
     responsibility: [
-      'Web Publishing',
-      'Next.js page router 개발',
+      '반응형 Web Publishing',
+      'Next.js 프레임워크와 TypeScript를 활용한 프론트엔드 개발',
+      'Zustand와 Axios를 활용한 상태 관리 및 데이터 처리',
+      'React-Query를 활용한 데이터 캐싱 및 최적화',
+      'Storybook을 활용한 컴포넌트 관리',
+      'jwt를 활용한 엑세스 제어',
       '개발 환경 구축',
       'Git-flow 활용',
       '공통 컴포넌트 작성',
@@ -367,8 +371,9 @@ export const projects: IProjects = {
     major: [
       'Boilerplate 구축 등 프로젝트 세팅과 인프라 구축을 담당하였습니다.',
       '패키지 구매, 환전, 출금, 관리자 페이지 및 기능 등의 구현을 맡아 구현하였습니다.',
-      'Next.js 프레임워크를 활용하여 페이지 라우터를 개발하고, 재사용 할 수 있는 공통 컴포넌트와 리액트 훅을 구현하였습니다.',
-      'TypeScript, Zustand, TailwindCSS, Axios, React-Query, React-Hook-Form, Zod 등의 툴과 테스트 코드로는 Storybook을 사용하였습니다.',
+      'Next.js 프레임워크를 활용하여 페이지 라우터를 개발하고, 재사용 할 수 있는 공통 컴포넌트와 커스텀 훅을 구현하였습니다.',
+      'TypeScript, Zustand, TailwindCSS, Axios, React-Query, React-Hook-Form, Zod 등의 툴을 사용하였습니다.',
+      'Storybook을 활용하여 컴포넌트를 관리하였습니다.',
       'Git-flow 전략을 활용하여 버전 관리를 수행하였으며, 프로젝트의 효율적인 협업을 위해 협업을 위해 Slack, Jira, Figma, Teams 등의 각종 툴을 활용하였습니다.',
       'TailwindCSS를 활용하여 CSS 프레임워크를 적용하고, 스타일링을 담당하였습니다.',
       'RESTful API를 통해 데이터 통신을 관리하였고, AWS Amplify 및 S3를 활용하여 프로젝트 인프라를 구축하였습니다.',
@@ -377,6 +382,7 @@ export const projects: IProjects = {
     result: [
       '프로젝트의 팀원들과 원활한 협업을 통해 프로젝트 일정을 준수하고 목표를 달성하였습니다.',
       'TailwindCSS 및 기타 다양한 라이브러리와 유틸을 프로젝트에 적용하여, 프로젝트의 개발 및 배포를 성공적으로 완료하였습니다.',
+      'Storybook을 활용하여 컴포넌트 개발 및 UI 요소들을 효과적으로 관리하고, UI 구축에 대한 효율성을 높였습니다.',
       '다국어 처리를 통해 전 세계 사용자들에게 최적화된 서비스를 제공하였습니다.',
       '다양한 관리자 기능들로 사용자와 관리자 간의 업무 흐름 효율성을 높일 수 있었습니다. ',
     ],
