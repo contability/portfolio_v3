@@ -319,7 +319,7 @@ export const projects: IProjects = {
       '효과적으로 잘 정리되어 작성된 각종 문서와 컨벤션은 프로젝트에 참여한 많은 개발자들의 코드를 어느 정도 균일하게 만들어주고 개발자 각각의 능률을 해치는게 아닌 고민을 덜어줄 수 있다는 것을 느끼게 된 것은 큰 수확이었습니다.',
       '참여한 기간이나 업무 기여도가 낮아 아쉬움이 많았지만 앞으로 이런 프로젝트에 크게 기여할 수 있는 개발자가 되겠다 다짐할 수 있게된 기회였고 이 외에도 진행하는 동안 개발 문화, 의사 소통, 개발 스킬, 프로젝트에 참여하는 태도 등 많은 것들을 느끼고 배울 수 있었던 시간이었습니다.',
     ],
-    images: ['image_projects_5_1.png', 'image_projects_5_2.png'],
+    images: ['image-projects-5-1.png', 'image-projects-5-2.png', 'image-projects-5-3.png', 'image-projects-5-4.png'],
     link: {
       url: 'https://m.albamon.com/',
     },
